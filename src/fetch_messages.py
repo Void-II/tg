@@ -1,6 +1,7 @@
 """
-fetch_messages.py — runs inside GitHub Actions to pull messages from Telegram
-and write encrypted JSON blobs to data/.
+fetch_messages.py — Pyrogram rewrite
+Runs inside GitHub Actions to pull messages from Telegram
+and write encrypted + plain JSON to data/.
 """
 
 import os
@@ -8,33 +9,30 @@ import json
 import asyncio
 import base64
 import hashlib
-import time
 from pathlib import Path
 from datetime import datetime, timezone
 
-from telethon.sessions import StringSession
-from telethon import TelegramClient
-from telethon.tl.types import (
-    User, Chat, Channel,
-    MessageMediaPhoto, MessageMediaDocument,
-    MessageMediaWebPage, ReactionEmoji,
-)
+from pyrogram import Client
+from pyrogram.enums import ChatType, MessageMediaType
+from pyrogram.errors import FloodWait
 from cryptography.fernet import Fernet
 
 # ── config ────────────────────────────────────────────────────────────────────
-API_ID   = int(os.environ["TG_API_ID"])
-API_HASH = os.environ["TG_API_HASH"]
-RAW_KEY  = os.environ["DATA_KEY"]          # arbitrary passphrase
-FORCE    = os.environ.get("FORCE_FULL", "false").lower() == "true"
-INIT_N   = int(os.environ.get("DEFAULT_FETCH_COUNT",  "20"))
-UPD_N    = int(os.environ.get("DEFAULT_UPDATE_COUNT", "50"))
+API_ID         = int(os.environ["TG_API_ID"])
+API_HASH       = os.environ["TG_API_HASH"]
+SESSION_STRING = os.environ["TG_SESSION_STRING"].strip()
+RAW_KEY        = os.environ["DATA_KEY"]
+FORCE          = os.environ.get("FORCE_FULL", "false").lower() == "true"
+INIT_N         = int(os.environ.get("DEFAULT_FETCH_COUNT",  "20"))
+UPD_N          = int(os.environ.get("DEFAULT_UPDATE_COUNT", "50"))
 
-DATA_DIR = Path("data")
+DATA_DIR    = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
 META_FILE   = DATA_DIR / "meta.json"
-CHATS_FILE  = DATA_DIR / "chats.enc"
+CHATS_ENC   = DATA_DIR / "chats.enc"
+CHATS_JSON  = DATA_DIR / "chats.json"
 
-# derive a valid Fernet key from the passphrase
+# ── encryption ────────────────────────────────────────────────────────────────
 def _fernet(passphrase: str) -> Fernet:
     key = base64.urlsafe_b64encode(
         hashlib.sha256(passphrase.encode()).digest()
@@ -50,66 +48,92 @@ def decrypt(data: bytes):
     return json.loads(F.decrypt(data))
 
 # ── helpers ───────────────────────────────────────────────────────────────────
-def _entity_name(entity) -> str:
-    if isinstance(entity, User):
-        parts = [entity.first_name or "", entity.last_name or ""]
-        return " ".join(p for p in parts if p).strip() or str(entity.id)
-    return getattr(entity, "title", None) or str(entity.id)
+def _chat_kind(chat_type: ChatType) -> str:
+    return {
+        ChatType.PRIVATE:   "user",
+        ChatType.BOT:       "user",
+        ChatType.GROUP:     "group",
+        ChatType.SUPERGROUP:"group",
+        ChatType.CHANNEL:   "channel",
+    }.get(chat_type, "unknown")
 
 def _media_info(msg) -> dict | None:
-    m = msg.media
-    if m is None:
+    if msg.media is None:
         return None
-    if isinstance(m, MessageMediaPhoto):
+    mt = msg.media
+
+    if mt == MessageMediaType.PHOTO:
         return {"type": "photo", "id": msg.id}
-    if isinstance(m, MessageMediaDocument):
-        doc = m.document
-        fname = next(
-            (a.file_name for a in (doc.attributes or []) if hasattr(a, "file_name")),
-            None,
-        )
+
+    if mt == MessageMediaType.DOCUMENT and msg.document:
+        doc = msg.document
         return {
-            "type": "document",
-            "id": doc.id,
-            "filename": fname,
+            "type":      "document",
+            "id":        doc.file_id,
+            "filename":  doc.file_name,
             "mime_type": doc.mime_type,
-            "size": doc.size,
+            "size":      doc.file_size,
         }
-    if isinstance(m, MessageMediaWebPage):
-        wp = m.webpage
+    if mt == MessageMediaType.VIDEO and msg.video:
+        v = msg.video
         return {
-            "type": "webpage",
-            "url": getattr(wp, "url", None),
-            "title": getattr(wp, "title", None),
+            "type":      "document",
+            "id":        v.file_id,
+            "filename":  v.file_name or "video.mp4",
+            "mime_type": v.mime_type,
+            "size":      v.file_size,
         }
-    return {"type": type(m).__name__}
+    if mt == MessageMediaType.AUDIO and msg.audio:
+        a = msg.audio
+        return {
+            "type":      "document",
+            "id":        a.file_id,
+            "filename":  a.file_name or "audio",
+            "mime_type": a.mime_type,
+            "size":      a.file_size,
+        }
+    if mt == MessageMediaType.VOICE and msg.voice:
+        return {"type": "document", "id": msg.voice.file_id,
+                "filename": "voice.ogg", "mime_type": "audio/ogg",
+                "size": msg.voice.file_size}
+    if mt == MessageMediaType.STICKER and msg.sticker:
+        return {"type": "sticker", "emoji": msg.sticker.emoji,
+                "id": msg.sticker.file_id}
+    if mt == MessageMediaType.WEB_PAGE and msg.web_page:
+        wp = msg.web_page
+        return {"type": "webpage", "url": wp.url, "title": wp.title,
+                "description": wp.description}
+
+    return {"type": mt.name.lower() if mt else "unknown"}
 
 def _reactions(msg) -> list:
-    if not getattr(msg, "reactions", None):
-        return []
     out = []
-    for r in msg.reactions.results:
-        emoji = r.reaction
-        out.append({
-            "emoji": emoji.emoticon if isinstance(emoji, ReactionEmoji) else "?",
-            "count": r.count,
-        })
+    if not msg.reactions:
+        return out
+    for r in msg.reactions.reactions:
+        out.append({"emoji": r.emoji, "count": r.count})
     return out
 
-def _serialize_message(msg, entity_id: int) -> dict:
+def _serialize_message(msg, chat_id: int) -> dict:
+    from_id = None
+    if msg.from_user:
+        from_id = msg.from_user.id
+    elif msg.sender_chat:
+        from_id = msg.sender_chat.id
+
     return {
-        "id": msg.id,
-        "chat_id": entity_id,
-        "date": msg.date.isoformat() if msg.date else None,
-        "from_id": getattr(msg.from_id, "user_id", None),
-        "text": msg.raw_text or "",
-        "media": _media_info(msg),
+        "id":        msg.id,
+        "chat_id":   chat_id,
+        "date":      msg.date.isoformat() if msg.date else None,
+        "from_id":   from_id,
+        "text":      msg.text or msg.caption or "",
+        "media":     _media_info(msg),
         "reactions": _reactions(msg),
-        "reply_to": getattr(msg.reply_to, "reply_to_msg_id", None),
-        "pinned": getattr(msg, "pinned", False),
-        "out": getattr(msg, "out", False),
-        "views": getattr(msg, "views", None),
-        "forwards": getattr(msg, "forwards", None),
+        "reply_to":  msg.reply_to_message_id,
+        "pinned":    getattr(msg, "pinned", False),
+        "out":       getattr(msg, "outgoing", False),
+        "views":     getattr(msg, "views", None),
+        "forwards":  getattr(msg, "forwards", None),
     }
 
 # ── main ──────────────────────────────────────────────────────────────────────
@@ -120,74 +144,90 @@ async def main():
 
     first_run = FORCE or not meta.get("initialized", False)
     fetch_n   = INIT_N if first_run else UPD_N
+    print(f"first_run={first_run}, fetch_n={fetch_n}")
 
-    SESSION_STRING = os.environ["TG_SESSION_STRING"]
-    client = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH)
-    await client.start()
-    print(f"✓ Connected. first_run={first_run}, fetch_n={fetch_n}")
+    app = Client(
+        name="relay",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION_STRING,
+        in_memory=True,
+    )
 
-    me = await client.get_me()
-    meta["me"] = {
-        "id": me.id,
-        "name": _entity_name(me),
-        "username": me.username,
-    }
+    async with app:
+        me = await app.get_me()
+        meta["me"] = {
+            "id":       me.id,
+            "name":     f"{me.first_name or ''} {me.last_name or ''}".strip(),
+            "username": me.username,
+        }
+        print(f"✓ Connected as {meta['me']['name']}")
 
-    chats_data: dict[str, dict] = {}
-    if CHATS_FILE.exists() and not first_run:
-        chats_data = decrypt(CHATS_FILE.read_bytes())
+        chats_data: dict[str, dict] = {}
+        if CHATS_ENC.exists() and not first_run:
+            chats_data = decrypt(CHATS_ENC.read_bytes())
 
-    dialogs = await client.get_dialogs(limit=None)
-    print(f"  Found {len(dialogs)} dialogs")
+        action_log = []
 
-    action_log = []
+        async for dialog in app.get_dialogs():
+            chat    = dialog.chat
+            chat_id = chat.id
+            key     = str(chat_id)
+            unread  = dialog.unread_messages_count or 0
 
-    for dlg in dialogs:
-        eid = dlg.entity.id
-        key = str(eid)
+            # on incremental runs skip chats with no unread
+            if not first_run and unread == 0:
+                continue
 
-        # skip if up-to-date
-        if not first_run and dlg.unread_count == 0:
-            continue
+            name = (
+                getattr(chat, "title", None)
+                or f"{getattr(chat,'first_name','') or ''} {getattr(chat,'last_name','') or ''}".strip()
+                or str(chat_id)
+            )
+            kind = _chat_kind(chat.type)
 
-        name = _entity_name(dlg.entity)
-        kind = (
-            "user"    if isinstance(dlg.entity, User)    else
-            "group"   if isinstance(dlg.entity, Chat)    else
-            "channel" if isinstance(dlg.entity, Channel) else "unknown"
+            messages = []
+            try:
+                async for msg in app.get_chat_history(chat_id, limit=fetch_n):
+                    messages.append(_serialize_message(msg, chat_id))
+            except FloodWait as e:
+                print(f"  FloodWait {e.value}s on {name}, skipping")
+                await asyncio.sleep(e.value)
+                continue
+            except Exception as e:
+                print(f"  Error fetching {name}: {e}")
+                continue
+
+            existing = {m["id"]: m for m in chats_data.get(key, {}).get("messages", [])}
+            for m in messages:
+                existing[m["id"]] = m
+
+            chats_data[key] = {
+                "id":                chat_id,
+                "name":              name,
+                "kind":              kind,
+                "username":          getattr(chat, "username", None),
+                "unread_count":      unread,
+                "last_message_date": messages[0]["date"] if messages else None,
+                "messages":          list(existing.values()),
+            }
+
+            action_log.append({"chat": name, "fetched": len(messages)})
+            print(f"  ↳ {name}: {len(messages)} messages")
+
+        # write encrypted blob
+        CHATS_ENC.write_bytes(encrypt(chats_data))
+        # write plain JSON for GitHub Pages
+        CHATS_JSON.write_text(
+            json.dumps(chats_data, ensure_ascii=False, default=str, indent=2)
         )
 
-        messages = []
-        async for msg in client.iter_messages(dlg.entity, limit=fetch_n):
-            messages.append(_serialize_message(msg, eid))
+        meta["initialized"] = True
+        meta["last_sync"]   = datetime.now(timezone.utc).isoformat()
+        meta["sync_log"]    = action_log
+        meta["total_chats"] = len(chats_data)
+        META_FILE.write_text(json.dumps(meta, indent=2, default=str))
 
-        existing_msgs = {m["id"]: m for m in chats_data.get(key, {}).get("messages", [])}
-        for m in messages:
-            existing_msgs[m["id"]] = m
-
-        chats_data[key] = {
-            "id": eid,
-            "name": name,
-            "kind": kind,
-            "username": getattr(dlg.entity, "username", None),
-            "unread_count": dlg.unread_count,
-            "last_message_date": messages[0]["date"] if messages else None,
-            "messages": list(existing_msgs.values()),
-            "photo": {"pending": True, "entity_id": eid},  # fetched on demand
-        }
-
-        action_log.append({"chat": name, "fetched": len(messages)})
-        print(f"  ↳ {name}: {len(messages)} messages")
-
-    CHATS_FILE.write_bytes(encrypt(chats_data))
-
-    meta["initialized"]  = True
-    meta["last_sync"]    = datetime.now(timezone.utc).isoformat()
-    meta["sync_log"]     = action_log
-    meta["total_chats"]  = len(chats_data)
-    META_FILE.write_text(json.dumps(meta, indent=2, default=str))
-
-    await client.disconnect()
-    print("✓ Done")
+        print(f"✓ Done — {len(chats_data)} chats written")
 
 asyncio.run(main())
