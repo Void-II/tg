@@ -28,18 +28,15 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install telethon cryptography
-
-
-      - name: Set session string env
-        run: echo "TG_SESSION_STRING=${{ secrets.TG_SESSION_STRING }}" >> $GITHUB_ENV
+        run: pip install pyrogram tgcrypto cryptography
 
       - name: Process queue
         env:
-          TG_API_ID:   ${{ secrets.TG_API_ID }}
-          TG_API_HASH: ${{ secrets.TG_API_HASH }}
-          DATA_KEY:    ${{ secrets.DATA_ENCRYPTION_KEY }}
-          QUEUE_B64:   ${{ github.event.inputs.queue_json }}
+          TG_API_ID:         ${{ secrets.TG_API_ID }}
+          TG_API_HASH:       ${{ secrets.TG_API_HASH }}
+          TG_SESSION_STRING: ${{ secrets.TG_SESSION_STRING }}
+          DATA_KEY:          ${{ secrets.DATA_ENCRYPTION_KEY }}
+          QUEUE_B64:         ${{ github.event.inputs.queue_json }}
         run: python src/process_queue.py
 
       - name: Commit results
