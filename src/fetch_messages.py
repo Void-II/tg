@@ -1,5 +1,7 @@
 """
-fetch_messages.py — Pyrogram, writes data/chats.json + data/config.enc
+fetch_messages.py — Pyrogram, Option B dual-key encryption
+- chats.enc  encrypted with DATA_ENCRYPTION_KEY (strong key)
+- config.enc encrypted with UI_ENCRYPTION_KEY   (== login password)
 """
 
 import os
@@ -19,7 +21,8 @@ from cryptography.fernet import Fernet
 API_ID         = int(os.environ["TG_API_ID"])
 API_HASH       = os.environ["TG_API_HASH"]
 SESSION_STRING = os.environ["TG_SESSION_STRING"].strip()
-RAW_KEY        = os.environ["DATA_KEY"]
+RAW_KEY        = os.environ["DATA_KEY"]           # strong key for chats.enc
+UI_KEY         = os.environ["UI_ENCRYPTION_KEY"]  # == login password for config.enc
 FORCE          = os.environ.get("FORCE_FULL", "false").lower() == "true"
 INIT_N         = int(os.environ.get("DEFAULT_FETCH_COUNT",  "20"))
 UPD_N          = int(os.environ.get("DEFAULT_UPDATE_COUNT", "50"))
@@ -43,13 +46,14 @@ def _fernet(passphrase: str) -> Fernet:
     )
     return Fernet(key)
 
-F = _fernet(RAW_KEY)
+F    = _fernet(RAW_KEY)   # for chats
+F_ui = _fernet(UI_KEY)   # for config.enc (browser decrypts with login password)
 
-def encrypt(obj) -> bytes:
-    return F.encrypt(json.dumps(obj, ensure_ascii=False, default=str).encode())
+def encrypt(obj, f: Fernet = None) -> bytes:
+    return (f or F).encrypt(json.dumps(obj, ensure_ascii=False, default=str).encode())
 
-def decrypt(data: bytes):
-    return json.loads(F.decrypt(data))
+def decrypt(data: bytes, f: Fernet = None):
+    return json.loads((f or F).decrypt(data))
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 def _chat_kind(chat_type: ChatType) -> str:
@@ -87,6 +91,9 @@ def _media_info(msg) -> dict | None:
     if mt == MessageMediaType.WEB_PAGE and msg.web_page:
         wp = msg.web_page
         return {"type": "webpage", "url": wp.url, "title": wp.title, "description": wp.description}
+    if mt == MessageMediaType.VIDEO_NOTE and msg.video_note:
+        return {"type": "document", "id": msg.video_note.file_id,
+                "filename": "video_note.mp4", "mime_type": "video/mp4", "size": msg.video_note.file_size}
     return {"type": mt.name.lower() if mt else "unknown"}
 
 def _reactions(msg) -> list:
@@ -190,20 +197,20 @@ async def main():
             print(f"  ↳ {name}: {len(messages)} messages")
 
         # write encrypted blob + plain JSON for Pages
-        CHATS_ENC.write_bytes(encrypt(chats_data))
+        CHATS_ENC.write_bytes(encrypt(chats_data, F))
         CHATS_JSON.write_text(
             json.dumps(chats_data, ensure_ascii=False, default=str, indent=2)
         )
 
-        # write encrypted config for browser unlock
+        # write config.enc encrypted with UI key (login password)
         config_payload = {
-            "gh_token":     GH_DISPATCH_TOKEN,
+            "gh_token":      GH_DISPATCH_TOKEN,
             "password_hash": MASTER_PASSWORD_HASH,
-            "gh_owner":     GH_OWNER,
-            "gh_repo":      GH_REPO,
+            "gh_owner":      GH_OWNER,
+            "gh_repo":       GH_REPO,
         }
-        CONFIG_ENC.write_bytes(encrypt(config_payload))
-        print("✓ config.enc written")
+        CONFIG_ENC.write_bytes(encrypt(config_payload, F_ui))
+        print("✓ config.enc written (UI key)")
 
         meta["initialized"] = True
         meta["last_sync"]   = datetime.now(timezone.utc).isoformat()
