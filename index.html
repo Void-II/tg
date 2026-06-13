@@ -121,6 +121,11 @@ html,body { height:100%; font-family:'Roboto Flex',sans-serif; background:var(--
 .msg-bubble { max-width:min(75%,520px);background:var(--md-sys-color-surface-container-high);border-radius:18px 18px 18px 4px;padding:8px 12px;position:relative;cursor:context-menu; }
 .msg-row.out .msg-bubble { background:var(--md-sys-color-primary-container);color:var(--md-sys-color-on-primary-container);border-radius:18px 18px 4px 18px; }
 .msg-bubble:hover { filter:brightness(1.1); }
+.msg-react-btn { position:absolute;top:-28px;right:8px;opacity:0;transition:opacity .15s;display:flex;gap:2px;background:var(--md-sys-color-surface-container-highest);border-radius:var(--md-sys-shape-corner-full);padding:3px 6px;box-shadow:var(--md-sys-elevation-2);pointer-events:none;z-index:10; }
+.msg-row.out .msg-react-btn { right:auto;left:8px; }
+.msg-bubble:hover .msg-react-btn { opacity:1;pointer-events:all; }
+.msg-react-mini { background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;border-radius:var(--md-sys-shape-corner-full);transition:background .1s; }
+.msg-react-mini:hover { background:rgba(255,255,255,.15); }
 .msg-sender { font-size:12px;font-weight:600;color:var(--md-sys-color-primary);margin-bottom:2px; }
 .msg-text { font-size:14px;line-height:1.5;white-space:pre-wrap;word-break:break-word; }
 .msg-footer { display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:4px; }
@@ -141,7 +146,7 @@ html,body { height:100%; font-family:'Roboto Flex',sans-serif; background:var(--
 .date-divider { display:flex;align-items:center;gap:8px;padding:8px 0;margin:8px 0; }
 .date-divider::before,.date-divider::after { content:'';flex:1;height:1px;background:var(--md-sys-color-outline-variant); }
 .date-label { font-size:12px;color:var(--md-sys-color-on-surface-variant);background:var(--md-sys-color-surface-container);padding:4px 10px;border-radius:var(--md-sys-shape-corner-full);white-space:nowrap; }
-.compose-bar { padding:8px 12px;flex-shrink:0;background:var(--md-sys-color-surface-container);border-top:1px solid var(--md-sys-color-outline-variant);display:flex;align-items:flex-end;gap:8px; }
+.compose-bar { padding:8px 12px;flex-shrink:0;background:var(--md-sys-color-surface-container);border-top:1px solid var(--md-sys-color-outline-variant);display:flex;align-items:flex-end;gap:8px;position:relative; }
 .compose-input { flex:1;background:var(--md-sys-color-surface-container-high);border:1px solid var(--md-sys-color-outline-variant);border-radius:var(--md-sys-shape-corner-xl);padding:10px 16px;color:var(--md-sys-color-on-surface);font-family:inherit;font-size:14px;outline:none;resize:none;min-height:44px;max-height:120px;overflow-y:auto;transition:border-color .2s;line-height:1.5; }
 .compose-input:focus { border-color:var(--md-sys-color-primary); }
 .compose-input::placeholder { color:var(--md-sys-color-on-surface-variant); }
@@ -303,6 +308,11 @@ html,body { height:100%; font-family:'Roboto Flex',sans-serif; background:var(--
       </div>
       <div id="messages"></div>
       <div class="compose-bar" id="compose-bar" style="display:none">
+        <div id="reply-indicator" style="display:none;position:absolute;bottom:100%;left:12px;right:12px;background:var(--md-sys-color-surface-container-highest);border-radius:var(--md-sys-shape-corner-sm) var(--md-sys-shape-corner-sm) 0 0;padding:6px 12px;font-size:12px;color:var(--md-sys-color-primary);display:flex;align-items:center;gap:8px;">
+          <span class="sym" style="font-size:16px">reply</span>
+          <span id="reply-indicator-text" style="flex:1"></span>
+          <button onclick="clearReply()" style="background:none;border:none;cursor:pointer;color:var(--md-sys-color-on-surface-variant);font-size:16px"><span class="sym">close</span></button>
+        </div>
         <textarea class="compose-input" id="compose-input" placeholder="Add to queue…" rows="1"
           oninput="autoGrow(this)" onkeydown="composeKeydown(event)"></textarea>
         <button class="compose-queue-btn" onclick="queueMessage()"><span class="sym fill">add_circle</span></button>
@@ -618,11 +628,16 @@ function renderMessages(chat) {
 
 function msgBubble(msg, myId, chat) {
   const isOut = msg.out || msg.from_id === myId;
-  const senderName = !isOut && chat.kind !== "user" ? `User ${msg.from_id || "?"}` : null;
+  const senderName = !isOut && chat.kind !== "user" ? `User ${msg.from_id||"?"}` : null;
+  const QUICK_EMOJIS = ["👍","❤️","😂","🔥","😮","😢"];
+  const qr = QUICK_EMOJIS.map(e =>
+    `<button class="msg-react-mini" onclick="event.stopPropagation();queueReact(${chat.id},${msg.id},'${e}')" title="${e}">${e}</button>`
+  ).join("");
   return `
   <div class="msg-row ${isOut ? "out" : ""}" data-msg-id="${msg.id}">
     ${!isOut && chat.kind !== "user" ? `<div class="msg-avatar-small">${String(msg.from_id||"?").slice(-2)}</div>` : ""}
-    <div class="msg-bubble">
+    <div class="msg-bubble" ondblclick="setReply(${msg.id},'${(msg.text||"Media").slice(0,40).replace(/'/g,"\'")}')">
+      <div class="msg-react-btn">${qr}</div>
       ${senderName ? `<div class="msg-sender">${esc(senderName)}</div>` : ""}
       ${msg.reply_to ? `<div class="reply-bubble" onclick="scrollToMsg(${msg.reply_to})">↩ Reply to #${msg.reply_to}</div>` : ""}
       ${msg.text ? `<div class="msg-text">${esc(msg.text)}</div>` : ""}
@@ -768,12 +783,30 @@ async function dispatchQueue() {
   }
 }
 
+let replyToMsgId = null;
+
+function setReply(msgId, preview) {
+  replyToMsgId = msgId;
+  const ind = document.getElementById("reply-indicator");
+  document.getElementById("reply-indicator-text").textContent = `Replying to: ${preview}`;
+  ind.style.display = "flex";
+  document.getElementById("compose-input").focus();
+}
+
+function clearReply() {
+  replyToMsgId = null;
+  document.getElementById("reply-indicator").style.display = "none";
+}
+
 function queueMessage() {
   const inp  = document.getElementById("compose-input");
   const text = inp.value.trim();
   if (!text || !state.activeChatId) return;
-  addToQueue({ type:"send_message", chat_id:state.activeChatId, text });
+  const action = { type:"send_message", chat_id:state.activeChatId, text };
+  if (replyToMsgId) action.reply_to = replyToMsgId;
+  addToQueue(action);
   inp.value = ""; inp.style.height = "auto";
+  clearReply();
 }
 function queueReact(chatId, msgId, emoji) { addToQueue({ type:"react", chat_id:chatId, msg_id:msgId, emoji }); }
 function queueMarkRead() { if (state.activeChatId) addToQueue({ type:"mark_read", chat_id:state.activeChatId }); }
