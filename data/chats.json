@@ -327,7 +327,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 199,
+        "views": 209,
         "forwards": 2
       },
       {
@@ -344,7 +344,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 242,
+        "views": 251,
         "forwards": 0
       },
       {
@@ -358,7 +358,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 349,
+        "views": 358,
         "forwards": 0
       },
       {
@@ -381,7 +381,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 431,
+        "views": 438,
         "forwards": 3
       },
       {
@@ -395,7 +395,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 470,
+        "views": 472,
         "forwards": 0
       },
       {
@@ -422,7 +422,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 666,
+        "views": 668,
         "forwards": 11
       },
       {
@@ -449,7 +449,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 673,
+        "views": 675,
         "forwards": 1
       },
       {
@@ -468,7 +468,7 @@
         "reply_to": 30547,
         "pinned": false,
         "out": false,
-        "views": 742,
+        "views": 744,
         "forwards": 1
       },
       {
@@ -494,7 +494,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 773,
+        "views": 775,
         "forwards": 8
       },
       {
@@ -513,7 +513,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 729,
+        "views": 730,
         "forwards": 2
       },
       {
@@ -715,11 +715,11 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 56
+            "count": 58
           },
           {
             "emoji": "👍",
-            "count": 14
+            "count": 16
           },
           {
             "emoji": "🔥",
@@ -733,8 +733,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 17023,
-        "forwards": 75
+        "views": 17662,
+        "forwards": 80
       },
       {
         "id": 23363,
@@ -744,7 +744,7 @@
         "text": "🔵 نسخه جدید فیلترشکن Candy VPN (اندروید)\n\n• نسخه 4.31   مود شده و بدون محدودیت \n\n\nپشتیبانی از پروتکل های V2ray و OpenVPN \n\nوصل نشد، سرورهای دیگه رو تست کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW0NqLYlAqvKvjVbUjxu0DGfh1IML-gACtyYAAosPaVHaHtRT6uHXyB4E",
+          "id": "BQACAgQAAx0CScpZDgACW0NqLYpCMWjGq0eAqDmPCYkO7lhDGQACtyYAAosPaVHaHtRT6uHXyB4E",
           "filename": "CandyVPN v4.31 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 39709770
@@ -752,11 +752,11 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 138
+            "count": 140
           },
           {
             "emoji": "👍",
-            "count": 23
+            "count": 24
           },
           {
             "emoji": "🔥",
@@ -770,8 +770,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 48886,
-        "forwards": 1092
+        "views": 49344,
+        "forwards": 1102
       },
       {
         "id": 23362,
@@ -782,7 +782,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW0JqLYlAwxECPMG8BHoUbAoEFJ9fTAACZA4AAtQZeVOdXfUSPgQiRx4E"
+          "id": "CAACAgQAAx0CScpZDgACW0JqLYpC2L5-IPPG3SJ6GAOpJC8wdQACZA4AAtQZeVOdXfUSPgQiRx4E"
         },
         "reactions": [
           {
@@ -797,7 +797,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 46180,
+        "views": 46547,
         "forwards": 24
       },
       {
@@ -808,7 +808,7 @@
         "text": "🟠 نسخه جدید فیلترشکن Warpi VPN (اندروید)\n\n• نسخه 1.10.54   مود شده و بدون محدودیت \n\n\nبرای اینترنت بین‌الملل، این VPN عملکرد خوبی داره.\n\nبرای مشاهده سرورها، بدون فیلترشکن (با فیلتر خاموش) وارد برنامه شوید و به سرورهای دارای پینگ متصل شوید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW0FqLYlAnEw6eYC0n3To0OCcX8xxGAAC5x0AAgFmaVEJClrcirEXRx4E",
+          "id": "BQACAgQAAx0CScpZDgACW0FqLYpC8FGLRjDCIWVxHIx6e6WaEwAC5x0AAgFmaVEJClrcirEXRx4E",
           "filename": "WarpiVPN v1.10.54 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 33169227
@@ -834,8 +834,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 90061,
-        "forwards": 2484
+        "views": 90339,
+        "forwards": 2489
       },
       {
         "id": 23360,
@@ -846,7 +846,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW0BqLYlA0S104xWBVPN729rG12JJWgAC_xkAAv2p-VM84icMictpAx4E"
+          "id": "CAACAgQAAx0CScpZDgACW0BqLYpCjw55mVjaV8VTVGdQkUOHcwAC_xkAAv2p-VM84icMictpAx4E"
         },
         "reactions": [
           {
@@ -869,7 +869,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 81106,
+        "views": 81262,
         "forwards": 49
       },
       {
@@ -882,11 +882,11 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 132
+            "count": 133
           },
           {
             "emoji": "👍",
-            "count": 24
+            "count": 25
           },
           {
             "emoji": "🔥",
@@ -900,7 +900,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 82921,
+        "views": 83109,
         "forwards": 293
       },
       {
@@ -911,7 +911,7 @@
         "text": "🔴 نسخه جدید فیلترشکن سایفون (اندروید)\n\n• نسخه 474   مود شده و بدون محدودیت\n\n\nبا مخابرات مستقیم و بدون پروکسی وصله.\nسایر اینترنت‌ها خودتون تست کنید.\n\n\n← نسخه ویندوز | آیفون \n\n📥لینک دانلود داخلی این فیلترشکن \n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACWz5qLYlABNkhsExDKTJQVwvL4wePrwAC2x0AAgFmaVGNJpJzckb53h4E",
+          "id": "BQACAgQAAx0CScpZDgACWz5qLYpCno9PzVQ2sVOcm1DrA1t4MgAC2x0AAgFmaVGNJpJzckb53h4E",
           "filename": "Psiphon Pro v474 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 28661557
@@ -919,7 +919,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 196
+            "count": 197
           },
           {
             "emoji": "👍",
@@ -937,8 +937,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 85457,
-        "forwards": 2231
+        "views": 85613,
+        "forwards": 2233
       },
       {
         "id": 23357,
@@ -949,7 +949,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACWz1qLYlAf3aM6tDtSVG2ZDVqL4mFhgACdB0AAvaA2VC1HHJJSiQbdR4E"
+          "id": "CAACAgQAAx0CScpZDgACWz1qLYpCvCyn36B_XxubVwL9RRRIMAACdB0AAvaA2VC1HHJJSiQbdR4E"
         },
         "reactions": [
           {
@@ -972,7 +972,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 81232,
+        "views": 81418,
         "forwards": 79
       },
       {
@@ -983,7 +983,7 @@
         "text": "🟢 کانفیگ NPV Tunnel (نپسترنت)\n\n☑️ تست شده و متصل \n\n\nبرنامه مورد نیاز :\n\nدانلود NPV Tunnel از گوگل پلی (اندروید)\n\nدانلود NPV Tunnel به صورت فایل (اندروید)\n\nدانلود NPV Tunnel از اپ استور (آیفون) \n\n\n@vpnbaz\n@v2raybaaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACWzxqLYlAovN_ZLTDZnDuO410pYqO5gACIB0AAgFmaVHY5XyhJUli2x4E",
+          "id": "BQACAgQAAx0CScpZDgACWzxqLYpC65fthiPnZwn952sRfVX3-QACIB0AAgFmaVHY5XyhJUli2x4E",
           "filename": "Apex.npvt",
           "mime_type": "application/octet-stream",
           "size": 6016
@@ -1009,8 +1009,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 117496,
-        "forwards": 1047
+        "views": 117648,
+        "forwards": 1049
       },
       {
         "id": 23355,
@@ -1020,7 +1020,7 @@
         "text": "🟢 نسخه جدید فیلترشکن Fair VPN (اندروید)\n\n• نسخه 7.0.4   #پیشنهاد_ویژه\n\nنسخه مود شده و بدون محدودیت \n\n\nامکان اتصال خودکار به بهترین سرور.\n\nبرای اینترنت بین‌الملل، این VPN عملکرد خوبی داره.\n\n\nاین فیلترشکن نسخه آیفون هم داره؛ اگه به اپ‌استور دسترسی دارید، می‌تونید دانلود و استفاده کنید.\n\n← دانلود نسخه آیفون \n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACWztqLYlAgi8liKpaNvu9M-dJuX1wmAACZyIAAgFmYVG9cxjxO-gIGx4E",
+          "id": "BQACAgQAAx0CScpZDgACWztqLYpCdH0YNOnarzPFbAWac69CDgACZyIAAgFmYVG9cxjxO-gIGx4E",
           "filename": "FairVPN v7.0.4 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 53293238
@@ -1046,8 +1046,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 123412,
-        "forwards": 3922
+        "views": 123504,
+        "forwards": 3923
       },
       {
         "id": 23354,
@@ -1058,7 +1058,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACWzpqLYlApDURyhv0MXGNm0U3cGGt4wACjiIAAqPR6FDjzsFMZTq_7R4E"
+          "id": "CAACAgQAAx0CScpZDgACWzpqLYpCc8Xnb12bnVpXyR9LrV9P-QACjiIAAqPR6FDjzsFMZTq_7R4E"
         },
         "reactions": [
           {
@@ -1081,7 +1081,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 110464,
+        "views": 110556,
         "forwards": 89
       },
       {
@@ -1092,7 +1092,7 @@
         "text": "🔵 نسخه جدید فیلترشکن Super VPN (اندروید)\n\n• نسخه 3.1.5   مود شده و بدون محدودیت \n\n\nبرای اینترنت بین‌الملل، این VPN عملکرد خوبی داره.\n\nوصل نشد، مجدداً برای اتصال تلاش کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACWzlqLYlAUJvn6HpuQPx3gLHFofuXWgAC6R8AAqqVWVGGhCKTxkrgFh4E",
+          "id": "BQACAgQAAx0CScpZDgACWzlqLYpCSg5bAAHlkOPZ1hMk-ch981oAAukfAAKqlVlRhoQik8ZK4BYeBA",
           "filename": "SuperVPN v3.1.5 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 25930695
@@ -1118,7 +1118,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 134710,
+        "views": 134801,
         "forwards": 2684
       },
       {
@@ -1130,7 +1130,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACWzhqLYlAnaY2q_GOmzI_UxvL9b9IJwACDBsAAgyFkVB5JM9xDBGhVx4E"
+          "id": "CAACAgQAAx0CScpZDgACWzhqLYpC1wICsbrI11qDjYDsMPIXUgACDBsAAgyFkVB5JM9xDBGhVx4E"
         },
         "reactions": [
           {
@@ -1153,7 +1153,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 123379,
+        "views": 123472,
         "forwards": 68
       },
       {
@@ -1164,7 +1164,7 @@
         "text": "🔵 نسخه جدید فیلترشکن JumpJump VPN (اندروید)\n\n• نسخه 3.1.2\n\n\nبرای اینترنت بین‌الملل، این VPN عملکرد خوبی داره.\n\nاین فیلترشکن نسخه آیفون هم داره؛ اگه به اپ‌استور دسترسی دارید، می‌تونید دانلود و استفاده کنید.\n\n← دانلود نسخه آیفون \n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACWzdqLYlAlZvnHXCQ2ExX-sMTc8_IgAACgiEAAgFmWVFLjRSuaXf-sB4E",
+          "id": "BQACAgQAAx0CScpZDgACWzdqLYpClAZFglzkf-0ZkHKZjgb7SQACgiEAAgFmWVFLjRSuaXf-sB4E",
           "filename": "JumpJumpVPN v3.1.2.apk",
           "mime_type": "application/octet-stream",
           "size": 70132469
@@ -1190,8 +1190,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 137307,
-        "forwards": 6788
+        "views": 137370,
+        "forwards": 6791
       },
       {
         "id": 23350,
@@ -1202,7 +1202,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACWzZqLYlAhA4BuJs13GdEZjarmrmmygACAiAAAtT8-FLH0Gswc4OnEh4E"
+          "id": "CAACAgQAAx0CScpZDgACWzZqLYpCCgxbz8eztkJmkUo_8OjXCwACAiAAAtT8-FLH0Gswc4OnEh4E"
         },
         "reactions": [
           {
@@ -1225,7 +1225,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 126653,
+        "views": 126715,
         "forwards": 103
       },
       {
@@ -1256,7 +1256,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 134895,
+        "views": 134958,
         "forwards": 604
       },
       {
@@ -1267,7 +1267,7 @@
         "text": "🟡 نسخه جدید فیلترشکن GoFly VPN (اندروید)\n\n• نسخه 5.1.1   مود شده و بدون محدودیت \n\n\nبرای اینترنت بین‌الملل، این VPN عملکرد خوبی داره.\n\nابتدا روی آیکن سرعت‌سنج گوشه صفحه کلیک کنید تا پینگ سرورها گرفته بشه، سپس به سروری که کمترین پینگ رو میده وصل بشید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACWzNqLYlARZu3oosmAYhymVTWMXbOVwACGB0AAknY-FM3sN-959WjEB4E",
+          "id": "BQACAgQAAx0CScpZDgACWzNqLYpC2F4PrgMOJEPJ7NY_izf76QACGB0AAknY-FM3sN-959WjEB4E",
           "filename": "GoFlyVPN v5.0.7 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 35925088
@@ -1293,7 +1293,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 137666,
+        "views": 137728,
         "forwards": 2582
       },
       {
@@ -1305,7 +1305,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACWzJqLYlAAgakkL3UgJp0JeIoQNLhYAACbQwAAhbYsVFM35igmIbNQx4E"
+          "id": "CAACAgQAAx0CScpZDgACWzJqLYpCe2cKXIqArRPwma3_upQmwwACbQwAAhbYsVFM35igmIbNQx4E"
         },
         "reactions": [
           {
@@ -1328,7 +1328,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 128242,
+        "views": 128274,
         "forwards": 77
       },
       {
@@ -1339,7 +1339,7 @@
         "text": "🔵 فیلترشکن Eagle VPN (اندروید)\n\n• نسخه 2.3\n\n\nبرای اینترنت بین‌الملل، عملکرد خوبی داره.\n\nوصل نشد، سرورهای دیگه رو تست کنید.\n\n\n📥دانلود EagleVPN از گوگل پلی\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACWzFqLYlAXHU9SEA5nebaPT1e2f4QKwACECMAApT8UVGBk5iizytxqB4E",
+          "id": "BQACAgQAAx0CScpZDgACWzFqLYpCJaXFT4HZnofHRq2LBiVGpgACECMAApT8UVGBk5iizytxqB4E",
           "filename": "EagleVPN v2.3.apk",
           "mime_type": "application/octet-stream",
           "size": 96291801
@@ -1365,8 +1365,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 148710,
-        "forwards": 2408
+        "views": 148741,
+        "forwards": 2409
       },
       {
         "id": 23344,
@@ -1377,7 +1377,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACWzBqLYlAq-Fem8DXouHqCqbkj2icYgAC8BIAAuRBYFKzfQxoLrSv7x4E"
+          "id": "CAACAgQAAx0CScpZDgACWzBqLYpCQ4Dm5_TCv2LN1aEPW8kuSgAC8BIAAuRBYFKzfQxoLrSv7x4E"
         },
         "reactions": [
           {
@@ -1400,7 +1400,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 141166,
+        "views": 141197,
         "forwards": 85
       }
     ]
@@ -1429,8 +1429,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 252,
-        "forwards": 16
+        "views": 256,
+        "forwards": 17
       },
       {
         "id": 3145,
@@ -1443,7 +1443,7 @@
         "reply_to": 3144,
         "pinned": false,
         "out": false,
-        "views": 276,
+        "views": 278,
         "forwards": 0
       },
       {
@@ -1462,7 +1462,7 @@
         "reply_to": 3143,
         "pinned": false,
         "out": false,
-        "views": 288,
+        "views": 289,
         "forwards": 0
       },
       {
@@ -1476,7 +1476,7 @@
         "reply_to": 3140,
         "pinned": false,
         "out": false,
-        "views": 309,
+        "views": 310,
         "forwards": 0
       },
       {
@@ -1499,7 +1499,7 @@
         "reply_to": 3139,
         "pinned": false,
         "out": false,
-        "views": 316,
+        "views": 317,
         "forwards": 0
       },
       {
@@ -1513,7 +1513,7 @@
         "reply_to": 3136,
         "pinned": false,
         "out": false,
-        "views": 378,
+        "views": 379,
         "forwards": 1
       },
       {
@@ -1527,7 +1527,7 @@
         "reply_to": 3137,
         "pinned": false,
         "out": false,
-        "views": 398,
+        "views": 399,
         "forwards": 2
       },
       {
@@ -1541,7 +1541,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 406,
+        "views": 407,
         "forwards": 1
       },
       {
@@ -1560,7 +1560,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 478,
+        "views": 479,
         "forwards": 1
       },
       {
@@ -1574,7 +1574,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 472,
+        "views": 473,
         "forwards": 0
       },
       {
@@ -1597,7 +1597,7 @@
         "reply_to": 3123,
         "pinned": false,
         "out": false,
-        "views": 527,
+        "views": 528,
         "forwards": 1
       },
       {
@@ -1639,7 +1639,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 632,
+        "views": 633,
         "forwards": 6
       },
       {
@@ -1666,7 +1666,7 @@
         "reply_to": 3129,
         "pinned": false,
         "out": false,
-        "views": 677,
+        "views": 678,
         "forwards": 0
       },
       {
@@ -1685,7 +1685,7 @@
         "reply_to": 3123,
         "pinned": false,
         "out": false,
-        "views": 672,
+        "views": 673,
         "forwards": 0
       },
       {
@@ -1704,7 +1704,7 @@
         "reply_to": 3123,
         "pinned": false,
         "out": false,
-        "views": 659,
+        "views": 660,
         "forwards": 0
       },
       {
@@ -1723,7 +1723,7 @@
         "reply_to": 3126,
         "pinned": false,
         "out": false,
-        "views": 604,
+        "views": 605,
         "forwards": 0
       },
       {
@@ -1745,7 +1745,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 585,
+        "views": 586,
         "forwards": 4
       },
       {
@@ -1768,7 +1768,7 @@
         "reply_to": 3123,
         "pinned": false,
         "out": false,
-        "views": 572,
+        "views": 573,
         "forwards": 0
       },
       {
@@ -1791,7 +1791,7 @@
         "reply_to": 3123,
         "pinned": false,
         "out": false,
-        "views": 582,
+        "views": 583,
         "forwards": 0
       },
       {
@@ -1814,7 +1814,7 @@
         "reply_to": 3115,
         "pinned": false,
         "out": false,
-        "views": 597,
+        "views": 598,
         "forwards": 7
       }
     ]
@@ -2130,7 +2130,7 @@
         "reactions": [
           {
             "emoji": "❤‍🔥",
-            "count": 6
+            "count": 7
           },
           {
             "emoji": "🤩",
@@ -2144,7 +2144,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 328,
+        "views": 329,
         "forwards": 1
       },
       {
@@ -2174,7 +2174,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 378,
+        "views": 379,
         "forwards": 5
       },
       {
@@ -2193,7 +2193,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 405,
+        "views": 406,
         "forwards": 4
       },
       {
@@ -2207,7 +2207,7 @@
         "reply_to": 10363,
         "pinned": false,
         "out": false,
-        "views": 484,
+        "views": 485,
         "forwards": 0
       },
       {
@@ -2441,7 +2441,7 @@
         "text": "🔥کانفیگ‌ OpenVpn 🔥\n\nکشور: آمریکا 🇺🇸 ( Georgia - Atlanta )\n\nحجم \nزمان \nنامحدود\n@Error404Bin\n@ErrorBin",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAASMHVZiAAIocGotiUCGKUIXvFPLz9un_IEqtREZAAJ4IAACwQxgUTAhBUd3gUzlHgQ",
+          "id": "BQACAgQAAyEFAASMHVZiAAIocGotikO995Q1IJbDtZsSzNDkBfmqAAJ4IAACwQxgUTAhBUd3gUzlHgQ",
           "filename": "@Error404Bin.ovpn",
           "mime_type": "application/octet-stream",
           "size": 4437
@@ -2594,7 +2594,7 @@
         "text": "🛡 کانفیگ فول پرسرعت نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹 کانفیگ اختصاصی کلیک کن👉\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nچند دقیقه صبرکنید وصل بشه..\n\nاینترنت آزاد برای همه, یا هیچکس 🖤\n\nT.me/MiTiVPN",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDamotiUAYBJ5Vvg30scdQ0o7gFVR5AAJQBgACHs9pRXI1qqjN8n-aHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDamotikPtWjMb95jap2O-Kwr49W-gAAJQBgACHs9pRXI1qqjN8n-aHgQ",
           "filename": "🔥🇩🇪🔥.npvt",
           "mime_type": "application/octet-stream",
           "size": 7988
@@ -2602,11 +2602,11 @@
         "reactions": [
           {
             "emoji": "❤‍🔥",
-            "count": 6837
+            "count": 6842
           },
           {
             "emoji": "❤",
-            "count": 1200
+            "count": 1199
           },
           {
             "emoji": "👍",
@@ -2614,7 +2614,7 @@
           },
           {
             "emoji": "🔥",
-            "count": 367
+            "count": 369
           },
           {
             "emoji": "⚡",
@@ -2624,8 +2624,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 447627,
-        "forwards": 9373
+        "views": 448481,
+        "forwards": 9411
       },
       {
         "id": 17250,
@@ -2635,7 +2635,7 @@
         "text": "🛡 کانفیگ فول پرسرعت نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹 کانفیگ اختصاصی کلیک کن👉\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nچند دقیقه صبرکنید وصل بشه..\n\nاینترنت آزاد برای همه, یا هیچکس 🖤\n\nT.me/MiTiVPN",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDYmotiUAgxfeiaUDYGjefBdJLfOB0AALXBwACHs9hRYIAAYIkrJEXmh4E",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDYmotikNAZE1GOIB5FgABr6dUdyLaqAAC1wcAAh7PYUWCAAGCJKyRF5oeBA",
           "filename": "پخت پز 🇩🇪🇺🇲🚀.npvt",
           "mime_type": "application/octet-stream",
           "size": 14508
@@ -2665,8 +2665,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 673477,
-        "forwards": 14574
+        "views": 673935,
+        "forwards": 14579
       },
       {
         "id": 17245,
@@ -2676,7 +2676,7 @@
         "text": "🛡 کانفیگ فول پرسرعت نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹 کانفیگ اختصاصی کلیک کن👉\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nچند دقیقه صبرکنید وصل بشه..\n\nاینترنت آزاد برای همه, یا هیچکس 🖤\n\nT.me/MiTiVPN",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDXWotiUDzDLUKr-TFeboT17zX__gcAAIBCQACHs9ZRTcgCoTrr_tUHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDXWotikOf3bM1qNayTJJHpTwHzsOFAAIBCQACHs9ZRTcgCoTrr_tUHgQ",
           "filename": "🇺🇲⚡🚀.npvt",
           "mime_type": "application/octet-stream",
           "size": 8168
@@ -2684,7 +2684,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 5730
+            "count": 5731
           },
           {
             "emoji": "❤‍🔥",
@@ -2706,8 +2706,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 699194,
-        "forwards": 11555
+        "views": 699528,
+        "forwards": 11558
       },
       {
         "id": 17235,
@@ -2717,7 +2717,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹 کانفیگ اختصاصی کلیک کن👉\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nاینترنت آزاد برای همه, یا هیچکس 🖤\n\nT.me/MiTiVPN",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDU2otiUAO3vivfwUhcCpex0hfk4eOAAKRCAACtbtZRRCyfPEkWUbEHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDU2otikOBfAZscKErpZus1KSN_7sYAAKRCAACtbtZRRCyfPEkWUbEHgQ",
           "filename": "⚡⚡.npvt",
           "mime_type": "application/octet-stream",
           "size": 8100
@@ -2747,8 +2747,8 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 768059,
-        "forwards": 12723
+        "views": 768272,
+        "forwards": 12725
       },
       {
         "id": 17226,
@@ -2758,7 +2758,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹 کانفیگ اختصاصی کلیک کن👉\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nاینترنت آزاد برای همه, یا هیچکس 🖤\n\nT.me/MiTiVPN",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDSmotiUB6w47bb32ElsF6zUSc7GRIAAJ7CAACtbtZRapGVIenSJ96HgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDSmotikO56AAB4kA1OfVaOk1rx_K37QACewgAArW7WUWqRlSHp0ifeh4E",
           "filename": "🇩🇪💥.npvt",
           "mime_type": "application/octet-stream",
           "size": 8104
@@ -2788,7 +2788,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 774381,
+        "views": 774533,
         "forwards": 9872
       },
       {
@@ -2799,7 +2799,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹 کانفیگ اختصاصی کلیک کن👉\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nاینترنت آزاد برای همه, یا هیچکس 🖤\n\nT.me/MiTiVPN",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDQ2otiUCusrOfg9lnDKfJZWVESu8FAAJOCAACtbtZRS-1hGPYISb1HgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDQ2otikMhdJSAA57KgfacyBqXO1evAAJOCAACtbtZRS-1hGPYISb1HgQ",
           "filename": "ʙᴇꜱᴛ 🇳🇱 🇩🇪⚡🚀.npvt",
           "mime_type": "application/octet-stream",
           "size": 14980
@@ -2829,7 +2829,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 840771,
+        "views": 840864,
         "forwards": 15778
       },
       {
@@ -2840,7 +2840,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹 کانفیگ اختصاصی کلیک کن👉\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nاینترنت آزاد برای همه, یا هیچکس 🖤\n\nT.me/MiTiVPN",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDMGotiUC4A__apF1Xvmq55-4dLDWxAAJQCAACiHVIRYHKdIxSIzaGHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDMGotikOkS37Thc2q9naC0kMAAVyQdAACUAgAAoh1SEWBynSMUiM2hh4E",
           "filename": "-𝗩𝗶𝗣 -⚡🇳🇱 🇩🇪⚡-.npvt",
           "mime_type": "application/octet-stream",
           "size": 15020
@@ -2870,7 +2870,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 936446,
+        "views": 936569,
         "forwards": 21349
       },
       {
@@ -2881,7 +2881,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDGWotiUCmaMbdsTRya0PGq7M_KQttAALKCAACiHVARSi2_I1qQkozHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDGWotikPUk11WpwN7YYmzEiRnkZ8hAALKCAACiHVARSi2_I1qQkozHgQ",
           "filename": "⚡🇩🇪⚡.npvt",
           "mime_type": "application/octet-stream",
           "size": 8188
@@ -2911,7 +2911,7 @@
         "reply_to": 17170,
         "pinned": false,
         "out": false,
-        "views": 1100621,
+        "views": 1100863,
         "forwards": 22550
       },
       {
@@ -2922,7 +2922,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDEmotiUCET4xJ3-YoL3Xirx3XxMDJAAJHCAACiHVARZsKkEUH1WtXHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDEmotikPlRv0XX_Ubw8VYOe0e7rsPAAJHCAACiHVARZsKkEUH1WtXHgQ",
           "filename": "𝗙𝗮𝘀𝗧 🇸🇪 ⚡ 🇩🇪 💥 🇬🇧.npvt",
           "mime_type": "application/octet-stream",
           "size": 21868
@@ -2952,7 +2952,7 @@
         "reply_to": 17163,
         "pinned": false,
         "out": false,
-        "views": 1121548,
+        "views": 1121698,
         "forwards": 18573
       },
       {
@@ -2963,7 +2963,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJDC2otiUAvbc1pWfoaCC1dq5NX2oYYAAK6BgACq0k4Re6Vh3xpgkz0HgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJDC2otikMhTzp0QtOUZuVHI2qmtRcNAAK6BgACq0k4Re6Vh3xpgkz0HgQ",
           "filename": "𝗙𝗮𝘀𝗧 🇺🇲🚀🇫🇮⚡.npvt",
           "mime_type": "application/octet-stream",
           "size": 15036
@@ -2993,7 +2993,7 @@
         "reply_to": 17140,
         "pinned": false,
         "out": false,
-        "views": 1225606,
+        "views": 1225726,
         "forwards": 25243
       },
       {
@@ -3004,7 +3004,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n🌐🌐🌐\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJC9GotiUA5Ad8hxsmD0Vr91nlXS7GJAALyBwACq0kwRUzYjMM_EjxeHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJC9GotikP0CMJ82K9TXTgtQ04ya414AALyBwACq0kwRUzYjMM_EjxeHgQ",
           "filename": "𝗙𝗮𝘀𝗧 🇳🇱 🇩🇪⚡🚀.npvt",
           "mime_type": "application/octet-stream",
           "size": 15020
@@ -3034,7 +3034,7 @@
         "reply_to": 17114,
         "pinned": false,
         "out": false,
-        "views": 1381908,
+        "views": 1381998,
         "forwards": 39605
       },
       {
@@ -3045,7 +3045,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\n🌐 کانفیگ اختصاصی \n@MiTiVPNBoT\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJC2motiUA4ZU6Guv4WXnD9fgvMhZ8fAAITCAACuSUoRb7XQ22akQ2gHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJC2motikNvvzzBv7gKQI2qS8bzTAU1AAITCAACuSUoRb7XQ22akQ2gHgQ",
           "filename": "ᴘʀᴇᴍɪᴜᴍ ⚡.npvt",
           "mime_type": "application/octet-stream",
           "size": 14884
@@ -3075,7 +3075,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 1489137,
+        "views": 1489199,
         "forwards": 41886
       },
       {
@@ -3086,7 +3086,7 @@
         "text": "🌐 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJC1WotiUCPM9holRDiH64oJ4fcuaIuAAJJBwACuSUgRQI_EGqz3Q_dHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJC1WotikOuffzwrS4Cu5xlTryYmr-NAAJJBwACuSUgRQI_EGqz3Q_dHgQ",
           "filename": "🚀🇩🇪.npvt",
           "mime_type": "application/octet-stream",
           "size": 14804
@@ -3116,7 +3116,7 @@
         "reply_to": 17103,
         "pinned": false,
         "out": false,
-        "views": 1556142,
+        "views": 1556330,
         "forwards": 29119
       },
       {
@@ -3127,7 +3127,7 @@
         "text": "🌐 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJCz2otiUAqoRbYBvWvPG93wsCAZid_AAKACQACuSUYRX7ANutaQu7eHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJCz2otikOppdumxjfjUs6iB2aJYbi0AAKACQACuSUYRX7ANutaQu7eHgQ",
           "filename": "-ViP3 🇩🇪⚡.npvt",
           "mime_type": "application/octet-stream",
           "size": 8128
@@ -3157,7 +3157,7 @@
         "reply_to": 17098,
         "pinned": false,
         "out": false,
-        "views": 1492374,
+        "views": 1492465,
         "forwards": 18257
       },
       {
@@ -3168,7 +3168,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJCymotiUCoDJC9clxwWU7YdL5ZzQgBAAKtBgACZ00YRUHzVk84sAY-HgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJCymotikMXrGUSE3dQNgfyJwlfgNPOAAKtBgACZ00YRUHzVk84sAY-HgQ",
           "filename": "-ViP2 🇩🇪.npvt",
           "mime_type": "application/octet-stream",
           "size": 8136
@@ -3198,7 +3198,7 @@
         "reply_to": 17088,
         "pinned": false,
         "out": false,
-        "views": 1526059,
+        "views": 1526150,
         "forwards": 26492
       },
       {
@@ -3209,7 +3209,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\n‼️ حجم اتصالی بالاس یکم صبر کنید وصل بشه\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJCwGotiUDyoG4pkJbvBe8lZyBEFmf4AAJTBgACZ00QRRsWnomMKuAfHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJCwGotikNC_tiTVaHmukrjAAG0UGGugAACUwYAAmdNEEUbFp6JjCrgHx4E",
           "filename": "-ViP❤️🇩🇪.npvt",
           "mime_type": "application/octet-stream",
           "size": 8140
@@ -3239,7 +3239,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 1514587,
+        "views": 1514769,
         "forwards": 18581
       },
       {
@@ -3250,7 +3250,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n🌐⚡️🌐🌐\n\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\n‼️ حجم اتصالی بالاس یکم صبر کنید وصل بشه\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJCsmotiUBcucxg_x8Ioqfp6g9YKnlzAAIMCQACf84BRXQjgd8WHXF4HgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJCsmotikOQBRzJdwAB7GzqJXas89_j5AACDAkAAn_OAUV0I4HfFh1xeB4E",
           "filename": "AllNet 🇩🇪⚡.npvt",
           "mime_type": "application/octet-stream",
           "size": 8248
@@ -3280,7 +3280,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 1695845,
+        "views": 1695936,
         "forwards": 18972
       },
       {
@@ -3291,7 +3291,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n🌐⚡️🌐🌐\n\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\n‼️ حجم اتصالی بالاس یکم صبر کنید وصل بشه\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJCqmotiUChjCW8WqGzLBVoaPB0DyfuAALYCAACf84BRcfE9sqhzjfoHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJCqmotikNSiUmKxEeqo8iGbh5ask-WAALYCAACf84BRcfE9sqhzjfoHgQ",
           "filename": "NetMeli -ViP⚡.npvt",
           "mime_type": "application/octet-stream",
           "size": 15028
@@ -3321,7 +3321,7 @@
         "reply_to": 17055,
         "pinned": false,
         "out": false,
-        "views": 1701335,
+        "views": 1701366,
         "forwards": 20149
       },
       {
@@ -3332,7 +3332,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n🌐⚡️🌐🌐\n\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\n‼️ حجم اتصالی بالاس یکم صبر کنید وصل بشه\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJCn2otiUBWQGVLkQ0ec1csZwnlrGUlAALNCAACf84BRTasnZ-xCtHzHgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJCn2otikPNDTYFeSAKA5x8uQWu5bhBAALNCAACf84BRTasnZ-xCtHzHgQ",
           "filename": "All Full Fast⚡.npvt",
           "mime_type": "application/octet-stream",
           "size": 15032
@@ -3362,7 +3362,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 1706927,
+        "views": 1706988,
         "forwards": 20956
       },
       {
@@ -3373,7 +3373,7 @@
         "text": "🛡 کانفیگ فول پرسرعت برای نت ملی نپستر مخصوص دانلود وب گردی نامحدود برای اندروید و آیفون\n🌐⚡️🌐\n\n\n🔹نحوه اتصال داخل اندروید کلیک کن👉\n\n🔹نحوه اتصال داخل آیفون کلیک کن👉\n\n‼️ حجم اتصالی بالاس یکم صبر کنید وصل بشه\n\nاینترنت آزاد برای همه, یا هیچکس ⌛\n\nT.me/MiTiVPN 🔹",
         "media": {
           "type": "document",
-          "id": "BQACAgEAAyEFAASGmoD8AAJCj2otiUA33_TLPRJf1iPJ0SxExbSYAAJnBwACvbn5RAG_n0QjlVc1HgQ",
+          "id": "BQACAgEAAyEFAASGmoD8AAJCj2otikMvEPnV6hKcj8_lQNl_A5EJAAJnBwACvbn5RAG_n0QjlVc1HgQ",
           "filename": "-All.npvt",
           "mime_type": "application/octet-stream",
           "size": 11440
@@ -3403,7 +3403,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 1691384,
+        "views": 1691415,
         "forwards": 17872
       }
     ]
@@ -3427,7 +3427,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 1580,
+        "views": 1581,
         "forwards": 18
       },
       {
@@ -3441,7 +3441,7 @@
         "reply_to": 377,
         "pinned": false,
         "out": false,
-        "views": 670,
+        "views": 671,
         "forwards": 0
       },
       {
@@ -3455,7 +3455,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 636,
+        "views": 637,
         "forwards": 3
       },
       {
@@ -3721,7 +3721,7 @@
         "text": "🔄➕نمونه کانفیگ های قدیمی Surfshark برای تست،\nتست کنید اگه متصل میشد یا جوابگو بود براتون تعداد بیشتری بزارم.🙏🏻❤️\n\n❤️ Open VPN Configs 🔥✔️\nکانفیگ های Open VPN از برنامه Surfshark VPN\n✊✊✊✊\n1️⃣ فایل رو ذخیره کنید داخل پوشه‌ی دانلود هاتون (Save To Download)\n\n2️⃣آخرین نسخه Open VPN را از گوگل پلی❤️یا اپ استور📱 دانلود و اجرا کنید \nروی فایل ها کلیک کنید روی دکمه شر بزنید و کانفیگ هارو Add کنید توی Open VPN\nو متصل بشید.\nعزیزانی که تو مناطقی هستن که نتشون اختلال شدید داره لطفا نتیجه رو تو کامنت بگن.❤️\n\nعملکرد با هر نت تو هر منطقه فرق میکنه\nسعی کنید تمام نتایی که دارید رو تست گنید.\n\nلینک دانلود اوپین وی پی ان بدون فیلتر\n\nحمایت و ری اکت روی پست فراموش نشه دوستان برای آپدیت های بعدی💭\nکپی با ذکر منبع آزاد❤️\n➖➖➖➖➖➖➖➖➖➖\n👑 @PersiaTMChannel",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATdb3UsAAIBX2otiUGuHv487cWb_LWg7UIC4gw9AAKcHgACpyywUD57jNp-XzREHgQ",
+          "id": "BQACAgQAAyEFAATdb3UsAAIBX2otikO5xPONgaBroUr-LpBGw0sMAAKcHgACpyywUD57jNp-XzREHgQ",
           "filename": "@PersiaTMChannel-SurfsharkMY🇲🇲.ovpn",
           "mime_type": "application/octet-stream",
           "size": 2902
@@ -3741,7 +3741,7 @@
         "text": "",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATdb3UsAAIBXmotiUG8WZj4Mj43-fjyrD6BA2WXAAKbHgACpyywUBhwj6v6njh-HgQ",
+          "id": "BQACAgQAAyEFAATdb3UsAAIBXmotikOsfwABX72bD2qmAfaFcetbqQACmx4AAqcssFAYcI-r-p44fh4E",
           "filename": "@PersiaTMChannel-SurfsharkLT🇱🇻.ovpn",
           "mime_type": "application/octet-stream",
           "size": 2902
@@ -3761,7 +3761,7 @@
         "text": "",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATdb3UsAAIBXWotiUE-lfOFmyoCLhApizSj8TRSAAKaHgACpyywUFGjE-ECjuAlHgQ",
+          "id": "BQACAgQAAyEFAATdb3UsAAIBXWotikNPQjgJsifKXL3INCCLR1SMAAKaHgACpyywUFGjE-ECjuAlHgQ",
           "filename": "@PersiaTMChannel-SurfsharkLith🇱🇹.ovpn",
           "mime_type": "application/octet-stream",
           "size": 2904
@@ -3818,7 +3818,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 12846,
+        "views": 12849,
         "forwards": 1037
       },
       {
@@ -3830,7 +3830,7 @@
         "media": {
           "type": "sticker",
           "emoji": "🎞",
-          "id": "CAACAgQAAx0CRnYavQACeFFqLYlBlGv_KGZ5wZUwAWjr-hZw6wACCQoAAvYZuFNMeDaItN-oZB4E"
+          "id": "CAACAgQAAx0CRnYavQACeFFqLYpEt853eb9ivIZiguWB3rjNtAACCQoAAvYZuFNMeDaItN-oZB4E"
         },
         "reactions": [
           {
@@ -3841,7 +3841,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 7982,
+        "views": 7985,
         "forwards": 3
       },
       {
@@ -3876,7 +3876,7 @@
         "reply_to": 30799,
         "pinned": false,
         "out": false,
-        "views": 9557,
+        "views": 9559,
         "forwards": 439
       },
       {
@@ -3907,7 +3907,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 11580,
+        "views": 11581,
         "forwards": 446
       },
       {
@@ -3919,13 +3919,13 @@
         "media": {
           "type": "sticker",
           "emoji": "🎞",
-          "id": "CAACAgQAAx0CRnYavQACeE5qLYlBTr4O4zraTl97unnAEN2e0gAC7wcAAnoduVMLhxHerXVZYR4E"
+          "id": "CAACAgQAAx0CRnYavQACeE5qLYpE7ycCQDiy78NV6uddi3fUogAC7wcAAnoduVMLhxHerXVZYR4E"
         },
         "reactions": [],
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 10723,
+        "views": 10724,
         "forwards": 7
       },
       {
@@ -3936,7 +3936,7 @@
         "text": "🔰 آموزش راه اندازی پنل های VPN در کلودفلر با ربات تلگرام\n\n💢 امکانات ربات:\n◾️ امکان ساخت 4 پنل (BPB , Nahan, Edge, Nova)\n◾️ مدیریت کامل پنل های ساخته شده از داخل ربات\n◾️ امکان اتصال چندین حساب به ربات و...\n\n🕸 سایت و ربات استفاده شده در آموزش:\n● cloudflare.com\n● atomicmail.io\n● @CloudBPBot\n\n⚠️ ترجیحا از اکانت فیک برای اتصال به ربات و ساخت پنل استفاده کنید. یه سری نکات هم هست داخل کامنت پست، اونا رو بخونید.\n\n➰➰➰➰➰\n#️⃣ #vpn #config\n🆔 @King_Network7",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAx0CRnYavQACeE1qLYlBenIc46xAkZIsLX5X4jLz1QACZyAAAlXCQFH9iF53WCrHKx4E",
+          "id": "BAACAgQAAx0CRnYavQACeE1qLYpEJJ7bE7RzKUtZPjwPd8bdrAACZyAAAlXCQFH9iF53WCrHKx4E",
           "filename": "Untitled Project.mp4",
           "mime_type": "video/mp4",
           "size": 62480935
@@ -3970,7 +3970,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 13248,
+        "views": 13250,
         "forwards": 1103
       },
       {
@@ -3982,7 +3982,7 @@
         "media": {
           "type": "sticker",
           "emoji": "⚙️",
-          "id": "CAACAgQAAx0CRnYavQACeExqLYlBGN0wKi7D7SzVIAX30B74JgACpgoAAg1M-FBNYRvQusk4hB4E"
+          "id": "CAACAgQAAx0CRnYavQACeExqLYpEWnPD7GP85KcGOsigJkWH6gACpgoAAg1M-FBNYRvQusk4hB4E"
         },
         "reactions": [
           {
@@ -3993,7 +3993,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 10770,
+        "views": 10772,
         "forwards": 5
       },
       {
@@ -4016,7 +4016,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 11467,
+        "views": 11468,
         "forwards": 66
       },
       {
@@ -4028,7 +4028,7 @@
         "media": {
           "type": "sticker",
           "emoji": "⚙️",
-          "id": "CAACAgQAAx0CRnYavQACeEZqLYlBJdUlQvPnXOduUj1NBqgfawACpgoAAg1M-FBNYRvQusk4hB4E"
+          "id": "CAACAgQAAx0CRnYavQACeEZqLYpE3WeTzMoVLgIwWO4f9wI1kAACpgoAAg1M-FBNYRvQusk4hB4E"
         },
         "reactions": [
           {
@@ -4043,7 +4043,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 11111,
+        "views": 11113,
         "forwards": 2
       },
       {
@@ -4054,7 +4054,7 @@
         "text": "🔰 آموزش دریافت اشتراک یکماهه ChatGPT Business \n\n◾️موارد استفاده شده در آموزش:\n🟢ChatGPT\n🟢@free_yaya_bot\n🟢Domain: @edu.chaip.us\n🟢IP: OWN\n\n❓ در صورتی که صفحه لاگین و ثبت کد ایمیل براتون باز نشد مشکل از VPN - IP هست و باید تغییرش بدید.\n\n❌ ثبت نام بسته شد\n\n➰➰➰➰➰\n#️⃣ #ai\n🆔 @King_Network7",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAx0CRnYavQACeEVqLYlBHnSHd59RTmrk5dpAyrpj0AACXiMAAlXCOFHtEL5Z0FS5NR4E",
+          "id": "BAACAgQAAx0CRnYavQACeEVqLYpEtJ5TMHuPgyolSW0aA_0csgACXiMAAlXCOFHtEL5Z0FS5NR4E",
           "filename": "chatgpt.mp4",
           "mime_type": "video/mp4",
           "size": 12596381
@@ -4092,7 +4092,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 15281,
+        "views": 15283,
         "forwards": 1137
       },
       {
@@ -4104,7 +4104,7 @@
         "media": {
           "type": "sticker",
           "emoji": "💎",
-          "id": "CAACAgQAAx0CRnYavQACeERqLYlBviysxQxzJLFqOvdhHLml0AACowgAAu07sFMRmip-HPdhVR4E"
+          "id": "CAACAgQAAx0CRnYavQACeERqLYpE4_OsuzqNhrUQY8ILQJj2qgACowgAAu07sFMRmip-HPdhVR4E"
         },
         "reactions": [
           {
@@ -4146,7 +4146,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 12627,
+        "views": 12628,
         "forwards": 557
       },
       {
@@ -4158,7 +4158,7 @@
         "media": {
           "type": "sticker",
           "emoji": "🎞",
-          "id": "CAACAgQAAx0CRnYavQACeEJqLYlBCz5QRKWiY_tUHPnzZI2powAC7wcAAnoduVMLhxHerXVZYR4E"
+          "id": "CAACAgQAAx0CRnYavQACeEJqLYpEaMi3EYAgSy91RixyIgJq5wAC7wcAAnoduVMLhxHerXVZYR4E"
         },
         "reactions": [
           {
@@ -4223,7 +4223,7 @@
         "text": "🔰 آموزش دریافت اشتراک 90 روزه F-Secure + VPN\n\n◾️سایت های استفاده شده:\n🟢F-Secure\n🟢Fake Mail\n🟢Code: BNAUH-EFCTO-EQOCZ-RXHES\n🟢IP: 🇸🇪 Sweden\n\n❓ هر اکانت تا 5 نفر ظرفیت داره. خود VPN رو به صورت جدا نمیتونید نصب کنید و فقط داخل اپ اصلی F-Secure هست\n\n⬇️ Download\nWindows | Mac | Android | IOS\n\n➰➰➰➰➰\n#️⃣ #vpn\n🆔 @King_Network7",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAx0CRnYavQACeEBqLYlBoW_t47K265SoN1SsHbgkRgACCCQAAnQ8MFEj54351kLvwx4E",
+          "id": "BAACAgQAAx0CRnYavQACeEBqLYpEhtalCeLKHDTnOXuefWOFaAACCCQAAnQ8MFEj54351kLvwx4E",
           "filename": "f-secure.mp4",
           "mime_type": "video/mp4",
           "size": 17330480
@@ -4245,7 +4245,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 17623,
+        "views": 17624,
         "forwards": 542
       },
       {
@@ -4257,7 +4257,7 @@
         "media": {
           "type": "sticker",
           "emoji": "🔑",
-          "id": "CAACAgQAAx0CRnYavQACeD9qLYlBL9UmfS30QAlgE9Q13klgCAACjAgAAlgsuFOv5v0VfaE7iR4E"
+          "id": "CAACAgQAAx0CRnYavQACeD9qLYpEC_lZeHHP7AyMUtKMN2nFFgACjAgAAlgsuFOv5v0VfaE7iR4E"
         },
         "reactions": [
           {
@@ -4268,7 +4268,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 12963,
+        "views": 12965,
         "forwards": 2
       },
       {
@@ -4295,7 +4295,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 16242,
+        "views": 16244,
         "forwards": 60
       },
       {
@@ -4307,7 +4307,7 @@
         "media": {
           "type": "sticker",
           "emoji": "🔑",
-          "id": "CAACAgQAAx0CRnYavQACeD1qLYlBy8UHyAwMa2OQS_hSDVDGQgACPwsAAnKauFOM-GYGBtDyMB4E"
+          "id": "CAACAgQAAx0CRnYavQACeD1qLYpEkmmnxisUVNHN2FYvNeMYBQACPwsAAnKauFOM-GYGBtDyMB4E"
         },
         "reactions": [],
         "reply_to": null,
@@ -4356,7 +4356,7 @@
         "media": {
           "type": "sticker",
           "emoji": "⚙️",
-          "id": "CAACAgQAAx0CRnYavQACeDtqLYlBAAE1CJszr5iggRr7KZL8TJoAAqYKAAINTPhQTWEb0LrJOIQeBA"
+          "id": "CAACAgQAAx0CRnYavQACeDtqLYpEB6bI14bUjwr1J-fzZlSMWQACpgoAAg1M-FBNYRvQusk4hB4E"
         },
         "reactions": [
           {
@@ -4367,7 +4367,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 13704,
+        "views": 13705,
         "forwards": 1
       }
     ]
@@ -4586,7 +4586,7 @@
         "text": "",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAyEFAATjGYAXAAMXai2JQbSfbMbTBE8CMAc8WAY3Ad8AAnUfAAIEhUBQy38NIllwXiEeBA",
+          "id": "BAACAgQAAyEFAATjGYAXAAMXai2KROvblAcRhRCVtaxkseUWaNUAAnUfAAIEhUBQy38NIllwXiEeBA",
           "filename": "win-mitm.mp4",
           "mime_type": "video/mp4",
           "size": 11918683
@@ -4606,7 +4606,7 @@
         "text": "🔰 آموزش دانلود لینک های گوگل درایو با برنامه های MITM در اندروید و ویندوز (بدون VPN)\n\n◾️ برنامه MITM Drive Downloader مخصوص اندروید\n◾️ برنامه MITM Connect مخصوص ویندوز\n\n➰➰➰➰➰\n🤖 @LeecherPro_bot",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAyEFAATjGYAXAAMWai2JQXs1S-ZnmcRwvd3n0lxfko0AAnQfAAIEhUBQXuVcUuf9Jf0eBA",
+          "id": "BAACAgQAAyEFAATjGYAXAAMWai2KRPKUAAFXYrg-dRkwyaVL9srvAAJ0HwACBIVAUF7lXFLn_SX9HgQ",
           "filename": "mitm-android.mp4",
           "mime_type": "video/mp4",
           "size": 15917499
@@ -4662,7 +4662,7 @@
         "text": "🔰MITM Connect \n\n💻 نسخه ویندوز \n\nبرنامه ای برای استفاده از خدمات گوگل و در نهایت دانلود فایل های گوکل درایو\n\n🤖 @LeecherPro_bot",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATjGYAXAAMUai2JQQhQzQicRO0jXwK2SlvweJ0AAqgbAAIwAVFTz6RrNr9hztgeBA",
+          "id": "BQACAgQAAyEFAATjGYAXAAMUai2KRMVkhaVDv_Rew39DrTlamfgAAqgbAAIwAVFTz6RrNr9hztgeBA",
           "filename": "mitm-connect-setup.exe",
           "mime_type": "application/octet-stream",
           "size": 61510688
@@ -4695,7 +4695,7 @@
         "text": "🔰MITM Drive Downloader\n\n👽نسخه اندروید \n\n● برنامه ای برای دانلود لینک های مستقیم گوگل درایو \n\n🤖 @LeecherPro_bot",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATjGYAXAAMTai2JQefM5DROKv_hfhzS993of0kAArEfAAJtAAFAUP3RTz-EOth8HgQ",
+          "id": "BQACAgQAAyEFAATjGYAXAAMTai2KROCPw7pLi9FFxP6OTT4JMSsAArEfAAJtAAFAUP3RTz-EOth8HgQ",
           "filename": "MITM.Drive.Downloader.v1.0.0_8181.apk",
           "mime_type": "application/octet-stream",
           "size": 80133746
@@ -5053,7 +5053,7 @@
         "reply_to": null,
         "pinned": false,
         "out": false,
-        "views": 20121,
+        "views": 20123,
         "forwards": 146
       },
       {
@@ -6330,7 +6330,7 @@
         "text": "📥 فایل بازی: ACADEMY34\n🧑🏻‍💻 سازنده: Young & Naughty\n➖➖➖➖➖➖➖➖➖➖➖➖\n🎮 Channel: @XGames69",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAxkDAALY4WotiUOSPP0bWm9yzAQMp5rqjbM2AAJ0FwACJyFAUV50EGYwyUueHgQ",
+          "id": "BQACAgQAAxkDAALY4WotikYq9I0n3AtFTffASc8rTKOZAAJ0FwACJyFAUV50EGYwyUueHgQ",
           "filename": "ACADEMY34-v0.24.2.4(@XGames69).apk",
           "mime_type": "application/octet-stream",
           "size": 294802600
@@ -6350,7 +6350,7 @@
         "text": "✅ com.github.shadowsocks\n- Arch: arm64-v8a | SDK: default",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAxkBAALYQGotiUOFcwtKzj1SdpXmmaLez4_zAALQGwAC1FeQUXV-qhfvO_zxHgQ",
+          "id": "BQACAgQAAxkBAALYQGotika_XkVgHxb8YjRUpAWY-qWmAALQGwAC1FeQUXV-qhfvO_zxHgQ",
           "filename": "com.github.shadowsocks_arm64-v8a_default.apk",
           "mime_type": "application/octet-stream",
           "size": 8197575
@@ -6412,7 +6412,7 @@
         "text": "✅ com.oasisfeng.island\n- Arch: arm64-v8a | SDK: default",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAxkBAALYPGotiUMgeWbMPzfmZQLrRh5APy_RAAKzJAAC1FeYUSc7kdEF9I0tHgQ",
+          "id": "BQACAgQAAxkBAALYPGotikbaU2LVxyA-PJ46R_G3KR-cAAKzJAAC1FeYUSc7kdEF9I0tHgQ",
           "filename": "com.oasisfeng.island_arm64-v8a_default.apk",
           "mime_type": "application/octet-stream",
           "size": 3525108
@@ -6446,7 +6446,7 @@
         "text": "فایل 15000 DNS برای MasterDNS و...\n\nبرای استفاده کافی است این فایل را در برنامه مورد نظر SlipNet یا MasterDNS وارد کرده و اسکن رو انجام بدید.\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAxkBAALYOmotiUMvqqVYD8uBY_Xy2T2uN5dZAALeHAACkE7BU8jvoNBnyWVqHgQ",
+          "id": "BQACAgQAAxkBAALYOmotikaQEpb91v6djsOu_kkiSXOrAALeHAACkE7BU8jvoNBnyWVqHgQ",
           "filename": "DNS_Resolvers_15000 (6).txt",
           "mime_type": "text/plain",
           "size": 213786
@@ -6508,7 +6508,7 @@
         "text": "[]",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAxkBAALXuWotiUO9EYcYF83QnK8XJMR_iKvXAAJTHQACX0CRU-35Ra9Z_SYUHgQ",
+          "id": "BAACAgQAAxkBAALXuWotikbLQ9Ez_Xz1rCpLckus57otAAJTHQACX0CRU-35Ra9Z_SYUHgQ",
           "filename": "output.mp4",
           "mime_type": "video/mp4",
           "size": 51595362
@@ -6542,7 +6542,7 @@
         "text": "چنلمون : @onlyholi",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAxkBAALXlmotiUNcihwUPUSf441Kw2LvZ1FpAAJQHgACxiahU2BFbIG9k_8FHgQ",
+          "id": "BAACAgQAAxkBAALXlmotikZeicBBuYRLx7XPmzSiyR6bAAJQHgACxiahU2BFbIG9k_8FHgQ",
           "filename": "output.mp4",
           "mime_type": "video/mp4",
           "size": 17209942
@@ -6562,7 +6562,7 @@
         "text": "[]",
         "media": {
           "type": "document",
-          "id": "BAACAgIAAxkBAALXfmotiUPikabK85vAMyczaxRqFqb5AALfUQACVhHYSIoEFXPRMAS3HgQ",
+          "id": "BAACAgIAAxkBAALXfmotikYBbJYsTEpWMsECKzvzxnsQAALfUQACVhHYSIoEFXPRMAS3HgQ",
           "filename": "sweetie_fox__221649210_456239043_1d185b97.mp4",
           "mime_type": "video/mp4",
           "size": 481185623
@@ -6582,7 +6582,7 @@
         "text": "[]",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAxkBAALXcWotiUO7wGr_ClogZkzRzgWbZBUbAAJOHQACX0CRU6RpNv5d0axgHgQ",
+          "id": "BAACAgQAAxkBAALXcWotika801oxg0sJIKDZ6AxOQswGAAJOHQACX0CRU6RpNv5d0axgHgQ",
           "filename": "output.mp4",
           "mime_type": "video/mp4",
           "size": 93840005
@@ -6602,7 +6602,7 @@
         "text": "[]",
         "media": {
           "type": "document",
-          "id": "BAACAgIAAxkBAALXbmotiUP5h32Kf_JSMY_4qqgEogErAAIkLwACHzGRSObfW88PTzq2HgQ",
+          "id": "BAACAgIAAxkBAALXbmotikbxoj59hW3u9i2dt31ensMiAAIkLwACHzGRSObfW88PTzq2HgQ",
           "filename": "@darknazion ☬ telegram channel (1001) .mp4",
           "mime_type": "video/mp4",
           "size": 336009370
@@ -6622,7 +6622,7 @@
         "text": "[]",
         "media": {
           "type": "document",
-          "id": "BAACAgUAAxkBAALXbWotiUN-I6YnRm3W6VOgNxqOvW_PAAJxDgAC7PX4VC9zA57GMl7gHgQ",
+          "id": "BAACAgUAAxkBAALXbWotikZzkYzeRKdLfYGoDHUt-tIoAAJxDgAC7PX4VC9zA57GMl7gHgQ",
           "filename": "不同姿势的放荡脱衣舞娘被操，射在脸上_#sweetiefox_#欧美.mp4",
           "mime_type": "video/mp4",
           "size": 252039061
@@ -6642,7 +6642,7 @@
         "text": "[]",
         "media": {
           "type": "document",
-          "id": "BAACAgUAAxkBAALXbGotiUM49XW675sa41Z16To5yw0yAAK6EQACRBwpVcThEUCco6ZwHgQ",
+          "id": "BAACAgUAAxkBAALXbGotikbo0SkBBtsVZKLRCbe0DdYfAAK6EQACRBwpVcThEUCco6ZwHgQ",
           "filename": "成人女高中生为了大学入学而吮吸老师的鸡巴并粗暴地乱搞_#sweetiefox_#欧美.mp4",
           "mime_type": "video/mp4",
           "size": 214160296
@@ -6700,7 +6700,7 @@
         "text": "📥 فایل بازی: ACADEMY34\n🧑🏻‍💻 سازنده: Young & Naughty\n➖➖➖➖➖➖➖➖➖➖➖➖\n🎮 Channel: @XGames69",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAxkDAALY32otiUNWzNTBIMrPJ-VOLoY9Aue-AAJ0FwACJyFAUV50EGYwyUueHgQ",
+          "id": "BQACAgQAAxkDAALY32otikdNFKw1hc2Oe3wquG2X-VNnAAJ0FwACJyFAUV50EGYwyUueHgQ",
           "filename": "ACADEMY34-v0.24.2.4(@XGames69).apk",
           "mime_type": "application/octet-stream",
           "size": 294802600
@@ -6804,7 +6804,7 @@
         "text": "📥 فایل بازی: Lust Legion\n🧑🏻‍💻 سازنده: AELU\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n🎮 Cannel: @XGames69\n\n👀 تعداد بازدید:  194",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAxkDAALYpGotiUM11PXXHtjVg30atckUo-Q0AAJEGwACYtD4U7xvN6TulpYOHgQ",
+          "id": "BQACAgQAAxkDAALYpGotikeRtd2iqIV2Yg4o630l4UW7AAJEGwACYtD4U7xvN6TulpYOHgQ",
           "filename": "Lust-Legion-v0.11(@XGames69).apk",
           "mime_type": "application/octet-stream",
           "size": 874605503
@@ -6838,7 +6838,7 @@
         "text": "📥 فایل بازی: Slave Lord: RofB\n🧑🏻‍💻 سازنده: Pink Tea Games\n➖➖➖➖➖➖➖➖➖➖➖➖\n🎮 Channel: @XGames69",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAxkDAALYn2otiUNeN_kesGMD-MsOhzThBWvIAAKkFAAC1nHoUfWGnhXlxm8RHgQ",
+          "id": "BQACAgQAAxkDAALYn2otikeAmyXsqokUoJuniU1LskM1AAKkFAAC1nHoUfWGnhXlxm8RHgQ",
           "filename": "Slave-Lord-RofB-v1.0.2(@XGames69).apk",
           "mime_type": "application/octet-stream",
           "size": 1223716767
@@ -7181,7 +7181,7 @@
         "text": "",
         "media": {
           "type": "document",
-          "id": "CQACAgQAAxkBAALYTWotiUSy7dIbt2PphcqkJmMWafYhAAJEGwACZw4JUk5_WwWdR3s6HgQ",
+          "id": "CQACAgQAAxkBAALYTWotikgi_jErNtTaQNW2ZzqoXwgnAAJEGwACZw4JUk5_WwWdR3s6HgQ",
           "filename": "Reza-Bahram-Yar-128.mp3",
           "mime_type": "audio/mpeg",
           "size": 3463651
@@ -7201,7 +7201,7 @@
         "text": "🔴ویدیو وایرال شده تو شبکه‌های خارجی؛ \nاز دختربچه‌ای که تو ساحل بندرعباس داره تاب بازی میکنه، درحالی که اونطرف بندر پایگاه ها مورد هدف نیروی هوایی آمریکا قرار گرفتن :",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAxkBAALYTGotiURFY9PoblYHcfIBrBdKmaEXAALrHAACFMUxUq4pqrToYXOMHgQ",
+          "id": "BAACAgQAAxkBAALYTGotikhHkOtWFZF8yOm4TM5EOiGwAALrHAACFMUxUq4pqrToYXOMHgQ",
           "filename": "IMG_8592.MP4",
           "mime_type": "video/mp4",
           "size": 2001479
@@ -7531,7 +7531,7 @@
         "text": "[]",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAxkDAALXumotiUXbbx47Pmt_DLtWeoUPmHxrAAJTHQACX0CRU-35Ra9Z_SYUHgQ",
+          "id": "BAACAgQAAxkDAALXumotikuf6BOgUYECiqpQB2103xisAAJTHQACX0CRU-35Ra9Z_SYUHgQ",
           "filename": "output.mp4",
           "mime_type": "video/mp4",
           "size": 51595362
@@ -7579,7 +7579,7 @@
         "text": "چنلمون : @onlyholi",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAxkDAALXtmotiUVvK9DXIWiV-zqzgmHnzaO_AAJQHgACxiahU2BFbIG9k_8FHgQ",
+          "id": "BAACAgQAAxkDAALXtmotikvCcrAGTN55fCl3WUn_id-FAAJQHgACxiahU2BFbIG9k_8FHgQ",
           "filename": "output.mp4",
           "mime_type": "video/mp4",
           "size": 17209942
