@@ -5,10 +5,14 @@
     "username": "VxL_Re"
   },
   "initialized": true,
-  "last_sync": "2026-06-13T21:51:35.699149+00:00",
+  "last_sync": "2026-06-13T22:53:02.569230+00:00",
   "sync_log": [
     {
       "chat": "VPN MARKET",
+      "fetched": 50
+    },
+    {
+      "chat": "Odin Club",
       "fetched": 50
     },
     {
