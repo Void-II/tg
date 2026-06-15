@@ -1,31 +1,15 @@
 {
-  "processed_at": "2026-06-15T12:26:38.678355+00:00",
-  "total": 2,
-  "ok": 2,
+  "processed_at": "2026-06-15T12:33:48.080745+00:00",
+  "total": 1,
+  "ok": 1,
   "errors": 0,
   "results": [
     {
       "index": 0,
-      "type": "download_request",
+      "type": "bot_callback",
       "status": "ok",
       "result": {
-        "ok": true,
-        "safe_name": "-1001237997838_23376.webp",
-        "filename": "Logopit_1746827977067.webp",
-        "size": 40037,
-        "enc_path": "data/files/-1001237997838_23376.webp.enc"
-      }
-    },
-    {
-      "index": 1,
-      "type": "download_request",
-      "status": "ok",
-      "result": {
-        "ok": true,
-        "safe_name": "-1001237997838_23374.webp",
-        "filename": "Logopit_1781477043176.webp",
-        "size": 216146,
-        "enc_path": "data/files/-1001237997838_23374.webp.enc"
+        "ok": true
       }
     }
   ]
