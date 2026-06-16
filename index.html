@@ -998,7 +998,18 @@ async function tryUnlock(){
     cfg=await fernetDecryptJSON(key,enc);
     uiKey=key;
   }catch(e){
-    err.textContent="Wrong password.";
+    // HMAC failure = wrong password; JSON parse failure = corrupted file
+    if(e.message&&e.message.includes("HMAC")){
+      err.textContent="Wrong password.";
+    } else if(e.message&&e.message.includes("JSON")){
+      err.textContent="config.enc is corrupted — re-run the fetch workflow.";
+    } else {
+      err.textContent="Decryption failed: "+e.message;
+    }
+    inf.textContent=""; btn.disabled=false; return;
+  }
+  if(!cfg||typeof cfg!=="object"){
+    err.textContent="config.enc is empty or corrupted — re-run the fetch workflow.";
     inf.textContent=""; btn.disabled=false; return;
   }
   if(await sha256hex(val)!==cfg.password_hash){
@@ -1016,25 +1027,42 @@ id("pw").addEventListener("keydown",e=>{if(e.key==="Enter")tryUnlock();});
    INIT
 ════════════════════════════════════ */
 async function initApp(){
-  renderFab();
-  await loadData();
-  renderChats();
-  updateStatus();
+  try{
+    renderFab();
+    await loadData();
+    renderChats();
+    updateStatus();
+  }catch(e){
+    console.error("initApp error:", e);
+    snack("App error: "+e.message);
+  }
 }
 async function loadData(){
   setSyncing(true);
   try{
-    const [mr,cr,fr]=await Promise.all([
-      fetch(`${CFG.dataBase}/meta.json?_=${Date.now()}`),
-      fetch(`${CFG.dataBase}/chats.json?_=${Date.now()}`),
-      fetch(`${CFG.dataBase}/files_index.json?_=${Date.now()}`).catch(()=>null),
+    // fetch each file independently — missing files are non-fatal
+    const safeFetch = async(url) => {
+      try{
+        const r = await fetch(url+"?_="+Date.now());
+        if(!r.ok) return null;
+        return await r.json();
+      }catch(e){ return null; }
+    };
+    const [meta,chats,files] = await Promise.all([
+      safeFetch(`${CFG.dataBase}/meta.json`),
+      safeFetch(`${CFG.dataBase}/chats.json`),
+      safeFetch(`${CFG.dataBase}/files_index.json`),
     ]);
-    if(mr.ok) S.meta=await mr.json();
-    if(cr.ok) S.chats=await cr.json();
-    if(fr&&fr.ok) S.filesIndex=await fr.json();
+    if(meta)  S.meta       = meta;
+    if(chats) S.chats      = chats;
+    if(files) S.filesIndex = files;
     setSyncing(false);
-    snack(`Loaded ${Object.keys(S.chats).length} chats`);
-  }catch(e){setSyncing(false,true);}
+    const n = Object.keys(S.chats).length;
+    snack(n ? `Loaded ${n} chats` : "No data yet — run the fetch workflow");
+  }catch(e){
+    setSyncing(false,true);
+    console.warn("loadData error:", e);
+  }
 }
 
 /* ════════════════════════════════════
@@ -1054,7 +1082,7 @@ function setFilter(f,el){
 }
 function renderChats(){
   const q=id("srch").value.toLowerCase();
-  let list=Object.values(S.chats);
+  let list=Object.values(S.chats||{});
   if(S.tab==="people")  list=list.filter(c=>c.kind==="user"&&!c.is_bot);
   else if(S.tab==="bots")    list=list.filter(c=>c.is_bot||c.kind==="bot");
   else if(S.tab==="groups")  list=list.filter(c=>c.kind==="group");
@@ -1421,7 +1449,7 @@ function setFabTab(t){
   renderFab();
 }
 function renderFab(){
-  const cnt=S.queue.length;
+  const cnt=(S.queue||[]).length;
   id("q-cnt").textContent=cnt;
   const badge=id("fab-badge");
   badge.style.display=cnt?"flex":"none";
@@ -1546,8 +1574,8 @@ function showFiles(){
 }
 function closeFiles(){id("files-overlay").classList.remove("on");}
 async function openLbFromIndex(key){
-  const f=S.filesIndex[key];
-  if(!f) return;
+  const f=(S.filesIndex||{})[key];
+  if(!f){snack("File not found in index");return;}
   const mime=f.mime_type||guessMime(f.filename||"");
   const lb=id("lightbox");
   const cont=id("lb-content");
