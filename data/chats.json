@@ -2674,7 +2674,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 716,
+        "views": 717,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -2696,7 +2696,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 699,
+        "views": 700,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -2735,7 +2735,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 728,
+        "views": 729,
         "forwards": 3,
         "inline_keyboard": null,
         "via_bot": null
@@ -3041,7 +3041,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 863,
+        "views": 864,
         "forwards": 5,
         "inline_keyboard": null,
         "via_bot": null
@@ -3938,7 +3938,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 672,
+        "views": 673,
         "forwards": 13,
         "inline_keyboard": null,
         "via_bot": null
@@ -4290,7 +4290,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 661,
+        "views": 662,
         "forwards": 14,
         "inline_keyboard": null,
         "via_bot": null
@@ -4328,7 +4328,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 666,
+        "views": 669,
         "forwards": 11,
         "inline_keyboard": null,
         "via_bot": null
@@ -4453,7 +4453,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 635,
+        "views": 637,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -4478,7 +4478,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 653,
+        "views": 654,
         "forwards": 3,
         "inline_keyboard": null,
         "via_bot": null
@@ -4504,7 +4504,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 611,
+        "views": 613,
         "forwards": 0,
         "inline_keyboard": null,
         "via_bot": null
@@ -4560,7 +4560,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 586,
+        "views": 588,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -4590,7 +4590,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 561,
+        "views": 564,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -4620,7 +4620,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 581,
+        "views": 584,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -4650,7 +4650,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 664,
+        "views": 666,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -4687,7 +4687,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 719,
+        "views": 720,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -4713,7 +4713,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 690,
+        "views": 691,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -4743,7 +4743,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 538,
+        "views": 539,
         "forwards": 8,
         "inline_keyboard": null,
         "via_bot": null
@@ -4773,7 +4773,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 424,
+        "views": 429,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -4803,7 +4803,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 465,
+        "views": 468,
         "forwards": 0,
         "inline_keyboard": null,
         "via_bot": null
@@ -4816,7 +4816,7 @@
         "text": "قرعه کشی چالش ها انجام شد\nشات های گرفته شده تو پست مربوط شون ارسال و برنده‌ های چالش ها مطابق با ویدئو مشخص خواهند شد\n@XBat_Team",
         "media": {
           "type": "document",
-          "id": "BAACAgQAAx0CdEC45wACDJpqNaVTN2DjCaFBMvlTMeJG9jSGGwACQR0AAqFdsVFKSPrcc4iYFR4E",
+          "id": "BAACAgQAAx0CdEC45wACDJpqNapMIOxOtIxYEkHihFgU0QXq4gACQR0AAqFdsVFKSPrcc4iYFR4E",
           "filename": "video.mp4",
           "mime_type": "video/mp4",
           "size": 12060905
@@ -4824,7 +4824,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 9
+            "count": 10
           },
           {
             "emoji": "❤‍🔥",
@@ -4835,7 +4835,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 287,
+        "views": 294,
         "forwards": 0,
         "inline_keyboard": null,
         "via_bot": null
@@ -4857,7 +4857,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 393,
+        "views": 399,
         "forwards": 0,
         "inline_keyboard": null,
         "via_bot": null
@@ -4885,7 +4885,7 @@
         "text": "🟢 کانفیگ NPV Tunnel (نپسترنت)\n\n☑️ تست شده و متصل \n\n\nبرنامه مورد نیاز :\n\nدانلود NPV Tunnel از گوگل پلی (اندروید)\n\nدانلود NPV Tunnel به صورت فایل (اندروید)\n\nدانلود NPV Tunnel از اپ استور (آیفون) \n\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW1xqNaVTVRv8p8pvOwAB_qx712779HIAAhkgAAJTl4hRjAuCWR53hlkeBA",
+          "id": "BQACAgQAAx0CScpZDgACW1xqNapLrJUCw_9g6SfQITKjmKU0NwACGSAAAlOXiFGMC4JZHneGWR4E",
           "filename": "Atlas.npvt",
           "mime_type": "application/octet-stream",
           "size": 8372
@@ -4912,8 +4912,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 135172,
-        "forwards": 1023,
+        "views": 135476,
+        "forwards": 1033,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -4946,7 +4946,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 137209,
+        "views": 137512,
         "forwards": 549,
         "inline_keyboard": null,
         "via_bot": null
@@ -4959,7 +4959,7 @@
         "text": "⚫️ نسخه جدید فیلترشکن Halo VPN (اندروید)\n\n• نسخه 19.2.2   مود شده و بدون محدودیت \n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، مجدداً برای اتصال تلاش کنید.\n\nسرورهای این فیلترشکن برای Gemini جواب میده.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW1pqNaVT7uUEUB0P8S_4nVDBl8K95wAC7x4AAlOXiFG9ftXZa8OwGh4E",
+          "id": "BQACAgQAAx0CScpZDgACW1pqNapLi2gDw36fPAyEqjFZui5WagAC7x4AAlOXiFG9ftXZa8OwGh4E",
           "filename": "HaloVPN v19.2.2 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 71348758
@@ -4986,7 +4986,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 139075,
+        "views": 139379,
         "forwards": 3406,
         "inline_keyboard": null,
         "via_bot": null
@@ -5000,7 +5000,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW1lqNaVTOD1c7PSfzZmhD42fdnN17gACERcAAiWa4FL9gJE4kA9oUR4E",
+          "id": "CAACAgQAAx0CScpZDgACW1lqNapLNf4WY7kN6HlB_OZg7q2H3AACERcAAiWa4FL9gJE4kA9oUR4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 40300
@@ -5027,7 +5027,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 126353,
+        "views": 126655,
         "forwards": 96,
         "inline_keyboard": null,
         "via_bot": null
@@ -5040,7 +5040,7 @@
         "text": "🟣 فیلترشکن Penguin VPN (اندروید)\n\n• نسخه 1.1.4   مود شده و بدون محدودیت \n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، مجدداً برای اتصال تلاش کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW1hqNaVTBKaEdj8Ta34bbTcgR4WcdgACiR0AAmyvgVGUcal0PgGadB4E",
+          "id": "BQACAgQAAx0CScpZDgACW1hqNapLYgL0cQ3DTcVPOs0qXOwrYQACiR0AAmyvgVGUcal0PgGadB4E",
           "filename": "PenguinVPN v1.1.4 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 24344761
@@ -5067,7 +5067,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 151711,
+        "views": 152015,
         "forwards": 2551,
         "inline_keyboard": null,
         "via_bot": null
@@ -5081,7 +5081,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW1dqNaVTr2AdMS3MrkJ4xpIT-cTBMQAC9xsAAs8RmVLWJh2bIayo2h4E",
+          "id": "CAACAgQAAx0CScpZDgACW1dqNapLHLt6bICFB8A2vekCznZyXQAC9xsAAs8RmVLWJh2bIayo2h4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 390000
@@ -5108,7 +5108,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 136038,
+        "views": 136341,
         "forwards": 90,
         "inline_keyboard": null,
         "via_bot": null
@@ -5142,7 +5142,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 144017,
+        "views": 144320,
         "forwards": 393,
         "inline_keyboard": null,
         "via_bot": null
@@ -5155,7 +5155,7 @@
         "text": "🔴 نسخه جدید فیلترشکن سایفون (اندروید)\n\n• نسخه 476   مود شده و بدون محدودیت\n\n\nبا مخابرات مستقیم و بدون پروکسی وصله.\nسایر اینترنت‌ها خودتون تست کنید.\n\n\n← نسخه ویندوز | آیفون \n\n📥لینک دانلود داخلی این فیلترشکن \n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW1VqNaVTgfgLQSK48gYpWu2ReJNTeAACPx0AAmyvgVFkBP5KOjcVOB4E",
+          "id": "BQACAgQAAx0CScpZDgACW1VqNapLs8XyJfSyxiRPCPQynWCMlwACPx0AAmyvgVFkBP5KOjcVOB4E",
           "filename": "Psiphon Pro v476 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 18785731
@@ -5182,7 +5182,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 143495,
+        "views": 143797,
         "forwards": 2914,
         "inline_keyboard": null,
         "via_bot": null
@@ -5196,7 +5196,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW1RqNaVTz4w9mh4ICSpSTOlJPhdASAACdB0AAvaA2VC1HHJJSiQbdR4E",
+          "id": "CAACAgQAAx0CScpZDgACW1RqNapL1O-THY2Y3mulmYy_yiGAYQACdB0AAvaA2VC1HHJJSiQbdR4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 61251
@@ -5219,7 +5219,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 136107,
+        "views": 136413,
         "forwards": 83,
         "inline_keyboard": null,
         "via_bot": null
@@ -5232,7 +5232,7 @@
         "text": "🟢 کانفیگ NPV Tunnel (نپسترنت)\n\n☑️ تست شده و متصل \n\n\nبرنامه مورد نیاز :\n\nدانلود NPV Tunnel از گوگل پلی (اندروید)\n\nدانلود NPV Tunnel به صورت فایل (اندروید)\n\nدانلود NPV Tunnel از اپ استور (آیفون) \n\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW1JqNaVTC-YpxSbM9CTHDryWVayIAwACsRwAAmyvgVHOR5Hqs93__h4E",
+          "id": "BQACAgQAAx0CScpZDgACW1JqNapLztDXGB9eifiy9cHMqVHl4wACsRwAAmyvgVHOR5Hqs93__h4E",
           "filename": "Helix.npvt",
           "mime_type": "application/octet-stream",
           "size": 8608
@@ -5255,7 +5255,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 150451,
+        "views": 151062,
         "forwards": 1061,
         "inline_keyboard": null,
         "via_bot": null
@@ -5268,7 +5268,7 @@
         "text": "🟢 فیلترشکن Plug VPN (اندروید)\n\n• نسخه 3.7.2   مود شده و بدون محدودیت \n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، مجدداً برای اتصال تلاش کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW1FqNaVTCoEbgzLQSiQXjcTnCqtz3QACUBwAAmyvgVFux2zUBZL4hh4E",
+          "id": "BQACAgQAAx0CScpZDgACW1FqNapLZg3bCDgV_gURWfiYwzGUtAACUBwAAmyvgVFux2zUBZL4hh4E",
           "filename": "PlugVPN v3.7.2 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 24428568
@@ -5276,7 +5276,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 219
+            "count": 220
           },
           {
             "emoji": "👍",
@@ -5295,7 +5295,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 148752,
+        "views": 149056,
         "forwards": 2592,
         "inline_keyboard": null,
         "via_bot": null
@@ -5309,7 +5309,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW1BqNaVT4d7VA2a86MPqHI0E--RF1gACARoAAoky-VB7oYel7TqEph4E",
+          "id": "CAACAgQAAx0CScpZDgACW1BqNapLNeTbBbu83h2-FNZLbYXNeAACARoAAoky-VB7oYel7TqEph4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 40037
@@ -5336,7 +5336,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 143827,
+        "views": 144129,
         "forwards": 83,
         "inline_keyboard": null,
         "via_bot": null
@@ -5349,7 +5349,7 @@
         "text": "🔴 فیلترشکن Torob VPN (اندروید)\n\n• نسخه 1.3   مود شده و بدون محدودیت \n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، سرورهای دیگه رو تست کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW09qNaVT_kWktLYyaHqS1ozqCYl6-gAC8CEAAmZXCVGdkShh3tSeTx4E",
+          "id": "BQACAgQAAx0CScpZDgACW09qNapLRywLpdRWAAE9WN-hYQLVj1cAAvAhAAJmVwlRnZEoYd7Unk8eBA",
           "filename": "TorobVPN v1.3 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 27599989
@@ -5357,7 +5357,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 282
+            "count": 283
           },
           {
             "emoji": "😢",
@@ -5376,7 +5376,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 172880,
+        "views": 173182,
         "forwards": 2687,
         "inline_keyboard": null,
         "via_bot": null
@@ -5390,7 +5390,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW05qNaVTgWoAAcpUj2J6b4H9VhKt1iUAAoIjAAJsr3lRWYdX3bhHdvYeBA",
+          "id": "CAACAgQAAx0CScpZDgACW05qNapLszkDAozz2CE_raUXdgNKIAACgiMAAmyveVFZh1fduEd29h4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 216146
@@ -5417,7 +5417,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 154898,
+        "views": 155200,
         "forwards": 75,
         "inline_keyboard": null,
         "via_bot": null
@@ -5432,7 +5432,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 229
+            "count": 230
           },
           {
             "emoji": "👍",
@@ -5451,7 +5451,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 166280,
+        "views": 166583,
         "forwards": 2312,
         "inline_keyboard": null,
         "via_bot": null
@@ -5485,7 +5485,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 165691,
+        "views": 165693,
         "forwards": 553,
         "inline_keyboard": null,
         "via_bot": null
@@ -5498,7 +5498,7 @@
         "text": "🔵 نسخه جدید فیلترشکن Packet VPN (اندروید)\n\n• نسخه 1.5.3.1   مود شده و بدون محدودیت \n\n\nبرای اتصال به بهترین سرور، وارد لیست سرورها بشید و به سروری که کمترین عدد رو نمایش میده وصل بشید.\n\n\n📥لینک دانلود داخلی این فیلترشکن \n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW0tqNaVT87a5Al7CJ_xMDuIZuaAObwAC5B4AArEyeVGbSPjBr5jrih4E",
+          "id": "BQACAgQAAx0CScpZDgACW0tqNapLq9PFdOymV6PPxiS65_5HUwAC5B4AArEyeVGbSPjBr5jrih4E",
           "filename": "PacketVPN v1.5.3.1 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 29190530
@@ -5525,7 +5525,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 169876,
+        "views": 169878,
         "forwards": 3384,
         "inline_keyboard": null,
         "via_bot": null
@@ -5539,7 +5539,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW0pqNaVTvawyiHEi_udihDy4f6jHlQAChiAAAl1vGFG3QU7ZllT5dx4E",
+          "id": "CAACAgQAAx0CScpZDgACW0pqNapLs1ZkIqTGHKq5yM_lfMmWNAAChiAAAl1vGFG3QU7ZllT5dx4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 91010
@@ -5566,7 +5566,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 160320,
+        "views": 160322,
         "forwards": 73,
         "inline_keyboard": null,
         "via_bot": null
@@ -5579,7 +5579,7 @@
         "text": "⚫️ فیلترشکن Tiger VPN (اندروید)\n\n• نسخه 10.1   مود شده و بدون محدودیت \n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، مجدداً برای اتصال تلاش کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW0lqNaVTgqBSwDfyji4WCnt__seAugACviIAArEycVFnsinM46Ol3x4E",
+          "id": "BQACAgQAAx0CScpZDgACW0lqNapLspr26Hvi2RCSapOocFUpLwACviIAArEycVFnsinM46Ol3x4E",
           "filename": "TigerVPN v10.1 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 77635227
@@ -5606,7 +5606,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 182589,
+        "views": 182591,
         "forwards": 2454,
         "inline_keyboard": null,
         "via_bot": null
@@ -5620,7 +5620,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW0hqNaVTQnIFI3q3Wb5pxhF3pNcLJwACzxQAAk8v6FB89RUAAeIHsx4eBA",
+          "id": "CAACAgQAAx0CScpZDgACW0hqNapLOHy41nH-xShjZjwdVdMVBwACzxQAAk8v6FB89RUAAeIHsx4eBA",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 236163
@@ -5647,7 +5647,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 166086,
+        "views": 166088,
         "forwards": 77,
         "inline_keyboard": null,
         "via_bot": null
@@ -5660,7 +5660,7 @@
         "text": "🔵 نسخه جدید فیلترشکن Edge VPN (اندروید)\n\n• نسخه 1.5.3   مود شده و بدون محدودیت \n\n\nبرای اینترنت بین‌الملل، این VPN عملکرد خوبی داره.\n\nوصل نشد، سرورهای دیگه رو تست کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW15qNaVT62obt0G-UQABaa-elLPys6IAAngeAAJTl5BRa8T78cutn9weBA",
+          "id": "BQACAgQAAx0CScpZDgACW15qNapLurIp6EwzA4eszq4izJtR0gACeB4AAlOXkFFrxPvxy62f3B4E",
           "filename": "EdgeVPN v1.5.3 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 29358332
@@ -5687,7 +5687,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 135106,
+        "views": 135111,
         "forwards": 2020,
         "inline_keyboard": null,
         "via_bot": null
@@ -5701,7 +5701,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW11qNaVTpNdlSCfDYw3LTeuj0dw6mAAC-xUAAgTEkVLGA3KakqtN9x4E",
+          "id": "CAACAgQAAx0CScpZDgACW11qNapLhXcOMUP3wAuZ0bJjsmiqTwAC-xUAAgTEkVLGA3KakqtN9x4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 187146
@@ -5728,7 +5728,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 125277,
+        "views": 125581,
         "forwards": 66,
         "inline_keyboard": null,
         "via_bot": null
@@ -5741,7 +5741,7 @@
         "text": "🟢 کانفیگ NPV Tunnel (نپسترنت)\n\n☑️ تست شده و متصل \n\n\nبرنامه مورد نیاز :\n\nدانلود NPV Tunnel از گوگل پلی (اندروید)\n\nدانلود NPV Tunnel به صورت فایل (اندروید)\n\nدانلود NPV Tunnel از اپ استور (آیفون) \n\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW0dqNaVT_mHTl_crWGWRgQYUo6EJKwACryIAArEycVGWbevKPwABPhkeBA",
+          "id": "BQACAgQAAx0CScpZDgACW0dqNapLfOVST3gbPItP1Mnr0dsEMgACryIAArEycVGWbevKPwABPhkeBA",
           "filename": "Elite.npvt",
           "mime_type": "application/octet-stream",
           "size": 7384
@@ -5768,7 +5768,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 173327,
+        "views": 173330,
         "forwards": 1160,
         "inline_keyboard": null,
         "via_bot": null
@@ -5781,7 +5781,7 @@
         "text": "🔵 فیلترشکن Soren VPN (اندروید)\n\nدرصد اتصال فیلترشکن سورن بسیار بالاست و با همه‌ی اینترنت ها با سرعت بالا وصل میشه\n\n\n📥دانلود SorenVPN از گوگل پلی\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW0ZqNaVTtqKFiS35i6IrRY8Lk_dbZQACYSAAAoes-FAvXFsxcaJJIR4E",
+          "id": "BQACAgQAAx0CScpZDgACW0ZqNapLkn1qc4LYcAZnB9B7ysSKcQACYSAAAoes-FAvXFsxcaJJIR4E",
           "filename": "SorenVPN v2.3.apk",
           "mime_type": "application/octet-stream",
           "size": 65194199
@@ -5808,7 +5808,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 175329,
+        "views": 175331,
         "forwards": 4172,
         "inline_keyboard": null,
         "via_bot": null
@@ -5842,7 +5842,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 182045,
+        "views": 182048,
         "forwards": 590,
         "inline_keyboard": null,
         "via_bot": null
@@ -5855,7 +5855,7 @@
         "text": "🔵 نسخه جدید فیلترشکن Candy VPN (اندروید)\n\n• نسخه 4.31   مود شده و بدون محدودیت \n\n\nپشتیبانی از پروتکل های V2ray و OpenVPN \n\nوصل نشد، سرورهای دیگه رو تست کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW0NqNaVT7EWNMligpjtfS_izLFLHrQACtyYAAosPaVHaHtRT6uHXyB4E",
+          "id": "BQACAgQAAx0CScpZDgACW0NqNapLJ9g2CQ6wk5hmpoqkT-gEcAACtyYAAosPaVHaHtRT6uHXyB4E",
           "filename": "CandyVPN v4.31 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 39709770
@@ -5882,7 +5882,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 175575,
+        "views": 175578,
         "forwards": 3336,
         "inline_keyboard": null,
         "via_bot": null
@@ -5896,7 +5896,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW0JqNaVTJ1Ch-plaXzgAAVo9ZOgSMb0AAmQOAALUGXlTnV31Ej4EIkceBA",
+          "id": "CAACAgQAAx0CScpZDgACW0JqNapLKVeyE1_lBXtiYAaLzQvaGwACZA4AAtQZeVOdXfUSPgQiRx4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 213564
@@ -5923,7 +5923,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 158143,
+        "views": 158145,
         "forwards": 96,
         "inline_keyboard": null,
         "via_bot": null
@@ -5936,7 +5936,7 @@
         "text": "🟠 نسخه جدید فیلترشکن Warpi VPN (اندروید)\n\n• نسخه 1.10.54   مود شده و بدون محدودیت \n\n\nبرای اینترنت بین‌الملل، این VPN عملکرد خوبی داره.\n\nبرای مشاهده سرورها، بدون فیلترشکن (با فیلتر خاموش) وارد برنامه شوید و به سرورهای دارای پینگ متصل شوید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW0FqNaVTyyf9q_n1hSk4dg5Wln017QAC5x0AAgFmaVEJClrcirEXRx4E",
+          "id": "BQACAgQAAx0CScpZDgACW0FqNapLYF8Ge9YX9Q4fwiLUkcys4QAC5x0AAgFmaVEJClrcirEXRx4E",
           "filename": "WarpiVPN v1.10.54 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 33169227
@@ -5963,8 +5963,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 192174,
-        "forwards": 6109,
+        "views": 192476,
+        "forwards": 6119,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -5977,7 +5977,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW0BqNaVT9K3a4gNEKsr5KxcqafHUXQAC_xkAAv2p-VM84icMictpAx4E",
+          "id": "CAACAgQAAx0CScpZDgACW0BqNapLgrNy21NZy_ukkFPhGkJ3EwAC_xkAAv2p-VM84icMictpAx4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 67110
@@ -5985,7 +5985,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 156
+            "count": 157
           },
           {
             "emoji": "👍",
@@ -6004,7 +6004,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 161244,
+        "views": 161245,
         "forwards": 109,
         "inline_keyboard": null,
         "via_bot": null
@@ -6038,7 +6038,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 176173,
+        "views": 176175,
         "forwards": 444,
         "inline_keyboard": null,
         "via_bot": null
@@ -6051,7 +6051,7 @@
         "text": "🔴 نسخه جدید فیلترشکن سایفون (اندروید)\n\n• نسخه 474   مود شده و بدون محدودیت\n\n\nبا مخابرات مستقیم و بدون پروکسی وصله.\nسایر اینترنت‌ها خودتون تست کنید.\n\n\n← نسخه ویندوز | آیفون \n\n📥لینک دانلود داخلی این فیلترشکن \n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACWz5qNaVTvq18xiuAwLHeucUGel1H7AAC2x0AAgFmaVGNJpJzckb53h4E",
+          "id": "BQACAgQAAx0CScpZDgACWz5qNapLS7RovDKM6nwaV3kDRqCpCAAC2x0AAgFmaVGNJpJzckb53h4E",
           "filename": "Psiphon Pro v474 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 28661557
@@ -6059,7 +6059,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 280
+            "count": 281
           },
           {
             "emoji": "👍",
@@ -6078,7 +6078,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 162731,
+        "views": 162733,
         "forwards": 3607,
         "inline_keyboard": null,
         "via_bot": null
@@ -6839,7 +6839,7 @@
         "text": "🔵 فیلترشکن JamJam VPN (اندروید)\n\n• نسخه 39.0   مود شده و بدون محدودیت \n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، مجدداً برای اتصال تلاش کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW2BqNaVT1cJ0YoppbaBb-6WUlrazNAACJB8AAlOXkFHmkXk7qHrr4x4E",
+          "id": "BQACAgQAAx0CScpZDgACW2BqNapLWPkvJ53zsU6jKsyJj3bkvgACJB8AAlOXkFHmkXk7qHrr4x4E",
           "filename": "JamJamVPN v39.0 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 39416793
@@ -6847,7 +6847,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 268
+            "count": 269
           },
           {
             "emoji": "👍",
@@ -6866,8 +6866,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 118841,
-        "forwards": 3828,
+        "views": 118847,
+        "forwards": 3838,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -6880,7 +6880,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW19qNaVTUmeAgqTFMNz--q0yUaXP5wACJR8AAlOXkFE7NaVVebcwrh4E",
+          "id": "CAACAgQAAx0CScpZDgACW19qNapLJu6giHnH-fnuFRfGafbKqgACJR8AAlOXkFE7NaVVebcwrh4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 164813
@@ -6903,7 +6903,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 115778,
+        "views": 115787,
         "forwards": 101,
         "inline_keyboard": null,
         "via_bot": null
@@ -6937,7 +6937,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 121768,
+        "views": 122072,
         "forwards": 559,
         "inline_keyboard": null,
         "via_bot": null
@@ -6950,7 +6950,7 @@
         "text": "🟢 فیلترشکن  Nexen VPN (اندروید)\n\n• نسخه 26.6.15\n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، مجدداً برای اتصال تلاش کنید.\n\n\n📥دانلود NexenVPN از گوگل پلی\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW2RqNaVT6I9N_obH2T6NvO11XIKzmQAC-R4AAmHHkFE9gzU0fdhvzB4E",
+          "id": "BQACAgQAAx0CScpZDgACW2RqNapL1L5ltYCLIKUoIzKfsNwEBQAC-R4AAmHHkFE9gzU0fdhvzB4E",
           "filename": "Nexen VPN.apk",
           "mime_type": "application/octet-stream",
           "size": 75659464
@@ -6977,7 +6977,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 122649,
+        "views": 122956,
         "forwards": 1886,
         "inline_keyboard": null,
         "via_bot": null
@@ -6991,7 +6991,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW2NqNaVTe7-ivu2XqVla7Y2AzE0rGQACwiEAAgPYkFHZ08pcmK5xwx4E",
+          "id": "CAACAgQAAx0CScpZDgACW2NqNapLMLp14yBSEtmPN8S0f-caPAACwiEAAgPYkFHZ08pcmK5xwx4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 38883
@@ -7018,7 +7018,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 113951,
+        "views": 114258,
         "forwards": 88,
         "inline_keyboard": null,
         "via_bot": null
@@ -7031,7 +7031,7 @@
         "text": "🔵 فیلترشکن Salina VPN (اندروید)\n\n• نسخه 3.1.8   مود شده و بدون محدودیت \n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، سرورهای دیگه رو تست کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW2ZqNaVTDKcON_S3BN62YDV7T-VT3QAC_h4AAgPYmFG09F0PGWOo3h4E",
+          "id": "BQACAgQAAx0CScpZDgACW2ZqNapL4HEuYjhKR7bTM8zXHl2jZgAC_h4AAgPYmFG09F0PGWOo3h4E",
           "filename": "SalinaVPN v3.1.8 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 57827803
@@ -7039,7 +7039,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 220
+            "count": 221
           },
           {
             "emoji": "🔥",
@@ -7058,8 +7058,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 122703,
-        "forwards": 2581,
+        "views": 123009,
+        "forwards": 2591,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7072,7 +7072,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW2VqNaVTwag_kgcrYkP1ifuchvBJAwAC_x4AAgPYmFHUwWOFDpIDYR4E",
+          "id": "CAACAgQAAx0CScpZDgACW2VqNapLEeJqf5j9yLKc29Y6neGa-AAC_x4AAgPYmFHUwWOFDpIDYR4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 241988
@@ -7095,7 +7095,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 115693,
+        "views": 116301,
         "forwards": 84,
         "inline_keyboard": null,
         "via_bot": null
@@ -7108,7 +7108,7 @@
         "text": "🔴 نسخه جدید فیلترشکن سایفون (اندروید)\n\n• نسخه 478   مود شده و بدون محدودیت\n\n\nبا مخابرات مستقیم و بدون پروکسی وصله.\nسایر اینترنت‌ها خودتون تست کنید.\n\n\n← نسخه ویندوز | آیفون \n\n📥لینک دانلود داخلی این فیلترشکن \n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW2hqNaVTL5LD9jt-vkY0OoevjkQX8wAC2x8AAgPYmFFQBuNVJ0UqHR4E",
+          "id": "BQACAgQAAx0CScpZDgACW2hqNapLwLeJYust6AmrtPamo9xCvgAC2x8AAgPYmFFQBuNVJ0UqHR4E",
           "filename": "Psiphon Pro v478 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 29797494
@@ -7135,8 +7135,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 112771,
-        "forwards": 2171,
+        "views": 113378,
+        "forwards": 2181,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7149,7 +7149,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW2dqNaVTiH_JGFCEn7UOeCXtEPVnqwACdB0AAvaA2VC1HHJJSiQbdR4E",
+          "id": "CAACAgQAAx0CScpZDgACW2dqNapLQBrdylykx6yr6y2d8W9bmwACdB0AAvaA2VC1HHJJSiQbdR4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 61251
@@ -7176,7 +7176,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 101245,
+        "views": 101550,
         "forwards": 63,
         "inline_keyboard": null,
         "via_bot": null
@@ -7223,7 +7223,7 @@
         "text": "🟢 کانفیگ NPV Tunnel (نپسترنت)\n\n☑️ تست شده و متصل \n\n\nبرنامه مورد نیاز :\n\nدانلود NPV Tunnel از گوگل پلی (اندروید)\n\nدانلود NPV Tunnel به صورت فایل (اندروید)\n\nدانلود NPV Tunnel از اپ استور (آیفون) \n\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW2lqNaVTt2B-rMEgU_86403s-bfLGQACPyYAAgPYoFEAATMudov37A8eBA",
+          "id": "BQACAgQAAx0CScpZDgACW2lqNapLKE5Y5JRTG3TDD1XX7HxxyAACPyYAAgPYoFEAATMudov37A8eBA",
           "filename": "Bexo.npvt",
           "mime_type": "application/octet-stream",
           "size": 6716
@@ -7231,7 +7231,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 161
+            "count": 162
           },
           {
             "emoji": "👍",
@@ -7250,8 +7250,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 110573,
-        "forwards": 868,
+        "views": 111182,
+        "forwards": 878,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7263,7 +7263,7 @@
         "text": "🔵 نسخه جدید فیلترشکن UFO VPN (اندروید)\n\n• نسخه 2.5.10   #پیشنهاد_ویژه\n\nنسخه مود شده و بدون محدودیت \n\n\nدر اولین اجرا، هنگام نمایش صفحه خرید، روی علامت ضربدر (❌) گوشه صفحه بزنید.\n\nترجیحاً روی حالت Fastest Location وصل بشید تا برنامه به‌صورت خودکار به بهترین سرور وصل بشه.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW2xqNaVTU6fYCsAtKyAKpxEfF8aVvwACzyYAAgPYoFGsD0uOuRTnyB4E",
+          "id": "BQACAgQAAx0CScpZDgACW2xqNapLe4sGajFK2SsLXby4hnbqFAACzyYAAgPYoFGsD0uOuRTnyB4E",
           "filename": "UFOVPN v2.5.10 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 82437559
@@ -7271,11 +7271,11 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 233
+            "count": 234
           },
           {
             "emoji": "👍",
-            "count": 34
+            "count": 35
           },
           {
             "emoji": "🔥",
@@ -7290,8 +7290,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 103361,
-        "forwards": 2153,
+        "views": 103672,
+        "forwards": 2173,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7304,7 +7304,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW2tqNaVTg79-Tu-CBIKup8V-ZpBJngAC0CYAAgPYoFHwI0XZPwneeB4E",
+          "id": "CAACAgQAAx0CScpZDgACW2tqNapL6QT0w8xVNKPjTSFXuSBydgAC0CYAAgPYoFHwI0XZPwneeB4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 53968
@@ -7327,8 +7327,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 94275,
-        "forwards": 51,
+        "views": 95185,
+        "forwards": 61,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7342,7 +7342,7 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 241
+            "count": 242
           },
           {
             "emoji": "👍",
@@ -7361,8 +7361,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 94655,
-        "forwards": 1190,
+        "views": 95572,
+        "forwards": 1200,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7374,7 +7374,7 @@
         "text": "🟣 فیلترشکن SpeedTop VPN (اندروید)\n\n• نسخه 1.1.6   بدون تبلیغات \n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، سرورهای دیگه رو تست کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW3FqNaVT1XtI_uxl9bdJfsS6BX5YywAC2RwAAn7cqFHMHFpoIv34Fx4E",
+          "id": "BQACAgQAAx0CScpZDgACW3FqNapLmwvcH7msSvOSCqkHNepgNAAC2RwAAn7cqFHMHFpoIv34Fx4E",
           "filename": "SpeedTop v1.1.6 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 57247322
@@ -7401,8 +7401,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 68965,
-        "forwards": 1642,
+        "views": 70185,
+        "forwards": 1703,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7415,7 +7415,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW3BqNaVTVmKC1U65CdNp2k2Q_uBm7QAC5BwAAn7cqFHfSLV9KM5uiR4E",
+          "id": "CAACAgQAAx0CScpZDgACW3BqNapLdfsBkU58V78P7y5sl17sYgAC5BwAAn7cqFHfSLV9KM5uiR4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 168504
@@ -7442,8 +7442,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 64012,
-        "forwards": 42,
+        "views": 65534,
+        "forwards": 52,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7457,11 +7457,11 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 38
+            "count": 39
           },
           {
             "emoji": "👍",
-            "count": 10
+            "count": 11
           },
           {
             "emoji": "🔥",
@@ -7476,7 +7476,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 62086,
+        "views": 63608,
         "forwards": 25,
         "inline_keyboard": null,
         "via_bot": null
@@ -7491,11 +7491,11 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 132
+            "count": 133
           },
           {
             "emoji": "👍",
-            "count": 24
+            "count": 25
           },
           {
             "emoji": "😢",
@@ -7510,8 +7510,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 47719,
-        "forwards": 197,
+        "views": 49551,
+        "forwards": 207,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7523,7 +7523,7 @@
         "text": "🔵 نسخه جدید فیلترشکن Super VPN (اندروید)\n\n• نسخه 3.1.6   مود شده و بدون محدودیت \n\n\nامکان اتصال خودکار به بهترین سرور\n\nوصل نشد، مجدداً برای اتصال تلاش کنید.\n\n\n📥لینک دانلود داخلی این فیلترشکن\n\n@vpnbaz",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAx0CScpZDgACW3VqNaVTKxDKWlmrZY7Syk49AAHwGtkAAjkjAALLQ6lR-aspAAEaU3tJHgQ",
+          "id": "BQACAgQAAx0CScpZDgACW3VqNapLETN-pLG08tFsLb0cmJrm4QACOSMAAstDqVH5qykAARpTe0keBA",
           "filename": "SuperVPN v3.1.6 Mod.apk",
           "mime_type": "application/octet-stream",
           "size": 16630002
@@ -7531,15 +7531,15 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 56
+            "count": 65
           },
           {
             "emoji": "👍",
-            "count": 16
+            "count": 17
           },
           {
             "emoji": "😢",
-            "count": 6
+            "count": 7
           },
           {
             "emoji": "🔥",
@@ -7550,8 +7550,8 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 24555,
-        "forwards": 362,
+        "views": 27295,
+        "forwards": 432,
         "inline_keyboard": null,
         "via_bot": null
       },
@@ -7564,7 +7564,7 @@
         "media": {
           "type": "sticker",
           "emoji": null,
-          "id": "CAACAgQAAx0CScpZDgACW3RqNaVTK4vRKtbqyzWQ1SE3EMGLbQACDBsAAgyFkVB5JM9xDBGhVx4E",
+          "id": "CAACAgQAAx0CScpZDgACW3RqNapL6Cv6M_nAzVHCnHk1TD-YggACDBsAAgyFkVB5JM9xDBGhVx4E",
           "is_animated": false,
           "mime_type": "image/webp",
           "size": 100516
@@ -7572,11 +7572,11 @@
         "reactions": [
           {
             "emoji": "❤",
-            "count": 24
+            "count": 26
           },
           {
             "emoji": "👍",
-            "count": 3
+            "count": 4
           },
           {
             "emoji": "🔥",
@@ -7591,7 +7591,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 23882,
+        "views": 26619,
         "forwards": 14,
         "inline_keyboard": null,
         "via_bot": null
@@ -9842,7 +9842,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 1062,
+        "views": 1063,
         "forwards": 0,
         "inline_keyboard": null,
         "via_bot": null
@@ -9864,7 +9864,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 1041,
+        "views": 1042,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -10064,7 +10064,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 1403,
+        "views": 1404,
         "forwards": 1,
         "inline_keyboard": null,
         "via_bot": null
@@ -10108,7 +10108,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 1815,
+        "views": 1816,
         "forwards": 2,
         "inline_keyboard": null,
         "via_bot": null
@@ -10252,7 +10252,7 @@
         "text": "🔄➕نمونه کانفیگ های قدیمی Surfshark برای تست،\nتست کنید اگه متصل میشد یا جوابگو بود براتون تعداد بیشتری بزارم.🙏🏻❤️\n\n❤️ Open VPN Configs 🔥✔️\nکانفیگ های Open VPN از برنامه Surfshark VPN\n✊✊✊✊\n1️⃣ فایل رو ذخیره کنید داخل پوشه‌ی دانلود هاتون (Save To Download)\n\n2️⃣آخرین نسخه Open VPN را از گوگل پلی❤️یا اپ استور📱 دانلود و اجرا کنید \nروی فایل ها کلیک کنید روی دکمه شر بزنید و کانفیگ هارو Add کنید توی Open VPN\nو متصل بشید.\nعزیزانی که تو مناطقی هستن که نتشون اختلال شدید داره لطفا نتیجه رو تو کامنت بگن.❤️\n\nعملکرد با هر نت تو هر منطقه فرق میکنه\nسعی کنید تمام نتایی که دارید رو تست گنید.\n\nلینک دانلود اوپین وی پی ان بدون فیلتر\n\nحمایت و ری اکت روی پست فراموش نشه دوستان برای آپدیت های بعدی💭\nکپی با ذکر منبع آزاد❤️\n➖➖➖➖➖➖➖➖➖➖\n👑 @PersiaTMChannel",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATdb3UsAAIBX2o1pVPKxG0rbBwLT_h2NaLrXJJPAAKcHgACpyywUD57jNp-XzREHgQ",
+          "id": "BQACAgQAAyEFAATdb3UsAAIBX2o1qkz0rfWun3M8DAc0G4BFvhWDAAKcHgACpyywUD57jNp-XzREHgQ",
           "filename": "@PersiaTMChannel-SurfsharkMY🇲🇲.ovpn",
           "mime_type": "application/octet-stream",
           "size": 2902
@@ -10275,7 +10275,7 @@
         "text": "",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATdb3UsAAIBXmo1pVOlfz-9v4TC2jZ7ekmNUk13AAKbHgACpyywUBhwj6v6njh-HgQ",
+          "id": "BQACAgQAAyEFAATdb3UsAAIBXmo1qkytTR9NeQPrwY_LB1Hb7K_zAAKbHgACpyywUBhwj6v6njh-HgQ",
           "filename": "@PersiaTMChannel-SurfsharkLT🇱🇻.ovpn",
           "mime_type": "application/octet-stream",
           "size": 2902
@@ -10298,7 +10298,7 @@
         "text": "",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATdb3UsAAIBXWo1pVO0ISXwVQmCMa9KdNIXz4HQAAKaHgACpyywUFGjE-ECjuAlHgQ",
+          "id": "BQACAgQAAyEFAATdb3UsAAIBXWo1qkzonCXsCDjtv9uFo_GGAWmfAAKaHgACpyywUFGjE-ECjuAlHgQ",
           "filename": "@PersiaTMChannel-SurfsharkLith🇱🇹.ovpn",
           "mime_type": "application/octet-stream",
           "size": 2904
@@ -10321,7 +10321,7 @@
         "text": "",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATdb3UsAAIBXGo1pVOTacm4U6LA8zp_9NCElynWAAKZHgACpyywULAT1PsJGnpfHgQ",
+          "id": "BQACAgQAAyEFAATdb3UsAAIBXGo1qkz0Qar5pxPL7XzsQVKbvhyrAAKZHgACpyywULAT1PsJGnpfHgQ",
           "filename": "@PersiaTMChannel-SurfSharkAZ🇦🇿.ovpn",
           "mime_type": "application/octet-stream",
           "size": 2903
@@ -10344,7 +10344,7 @@
         "text": "",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATdb3UsAAIBW2o1pVNFgmCj7IcpztGfqhMtOPq0AAKYHgACpyywUNHM1p6N0hpRHgQ",
+          "id": "BQACAgQAAyEFAATdb3UsAAIBW2o1qkxVMegMa82e9GX-9Cegk0NFAAKYHgACpyywUNHM1p6N0hpRHgQ",
           "filename": "@PersiaTMChannel-SurfsharkAE🇦🇪.ovpn",
           "mime_type": "application/octet-stream",
           "size": 2903
@@ -10550,7 +10550,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 4692,
+        "views": 4693,
         "forwards": 117,
         "inline_keyboard": null,
         "via_bot": null
@@ -10856,7 +10856,7 @@
         "text": "🛡مهم: اگر این نسخه رو نصب کنید دیگه دردسر ستاپ کردن MITM و... ندارید!\nاین نسخه حدودا یک ساعت پیش توسط برنامه‌نویس شیر و خورشید آپدیت شد و به راحتی می‌تونید طبق این آموزش بهش وصل بشید:\n1- وارد اپلیکیشن شیر و خورشید(آخرین نسخه که امروز منتشر شده) می‌شید\n2- وارد بخش Options میشید از نوار بالا\n3- روی More Options کلیک میکنید\n4- گزینه‌ی  Connection Protocol رو قرار میدید روی CDN Fronting\n5- میرید و عادی کانکت میشید و به راحتی وصل میشه!",
         "media": {
           "type": "document",
-          "id": "BQACAgQAAyEFAATdb3UsAAIBRGo1pVMfXM_hUMKXKTs7zQrEwY-IAAJ5GwACVrExUKH8DFSjb0MxHgQ",
+          "id": "BQACAgQAAyEFAATdb3UsAAIBRGo1qkzoAVkQgRXYjLtdxyy3dmI3AAJ5GwACVrExUKH8DFSjb0MxHgQ",
           "filename": "ShirOKhorshid-2026.05.14.apk",
           "mime_type": "application/octet-stream",
           "size": 25088970
@@ -10930,7 +10930,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 948,
+        "views": 949,
         "forwards": 2,
         "inline_keyboard": null,
         "via_bot": null
@@ -10959,7 +10959,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 813,
+        "views": 816,
         "forwards": 2,
         "inline_keyboard": null,
         "via_bot": null
@@ -17858,7 +17858,7 @@
         "reply_preview": null,
         "pinned": false,
         "out": false,
-        "views": 22221,
+        "views": 22227,
         "forwards": 148,
         "inline_keyboard": null,
         "via_bot": null
