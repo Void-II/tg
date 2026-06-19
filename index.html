@@ -280,7 +280,7 @@ a:hover { text-decoration:underline; }
 }
 
 /* REACT BAR */
-.rbar {
+.rbar { display:none; }/* 
   position:absolute; bottom:100%; left:0; margin-bottom:4px;
   opacity:0; pointer-events:none; transition:opacity .12s;
   display:flex; gap:1px; background:var(--bg3); border:1px solid var(--border2);
@@ -288,7 +288,7 @@ a:hover { text-decoration:underline; }
   white-space:nowrap;
 }
 .mrow.out .rbar { left:auto; right:0; }
-.bubble:hover .rbar { opacity:1; pointer-events:all; }
+/* rbar removed — reactions now via three-dot menu only */
 .rq {
   background:none; border:none; cursor:pointer; font-size:15px;
   padding:2px 3px; border-radius:100px; line-height:1;
@@ -1250,22 +1250,17 @@ function mediaPartHTML(m, chatId, lbKey){
     return `<div class="sticker-wrap" onclick="if('${sKey}')openLb('${sKey}','image/webp')">${sEmoji}<div class="media-card" style="margin-top:4px"><span class="symf media-icon">emoji_emotions</span><div class="media-body"><div class="media-name">Sticker${md.emoji?" "+md.emoji:""}</div><div class="media-meta">${md.is_animated?"Animated · ":""}${md.size?fmtSize(md.size):""}</div></div><div class="media-actions">${sActions}</div></div></div>`;
   }
 
-  // photo — TG photos are always jpeg
+  // photo — treat exactly like any document, mime=image/jpeg
   if(md.type==="photo"){
     const encPath=findEncFile(chatId,m.id);
+    let actions="";
     if(encPath){
-      return `<div style="margin-top:6px">
-        <div class="photo-thumb" onclick="openLb('${lbKey||""}','image/jpeg')">
-          <div class="photo-thumb-inner"><span class="symf photo-placeholder">image</span></div>
-          <div class="photo-overlay"><span class="symf play-icon">zoom_in</span></div>
-        </div>
-        <button class="mbtn" style="margin-top:4px" onclick="downloadEncFull('${encPath}','photo_${m.id}.jpg','image/jpeg')"><span class="sym">download</span>Save</button>
-      </div>`;
+      actions+=`<button class="mbtn primary" onclick="openLb('${lbKey||""}','image/jpeg')"><span class="sym">zoom_in</span>View</button>`;
+      actions+=`<button class="mbtn" onclick="downloadEncFull('${encPath}','photo_${m.id}.jpg','image/jpeg')"><span class="sym">download</span>Save</button>`;
+    }else{
+      actions+=`<label class="dl-check"><input type="checkbox" onchange="toggleDl(this,${chatId},${m.id})"/> Queue DL</label>`;
     }
-    return `<div class="photo-thumb" onclick="toggleDl(null,${chatId},${m.id},true)" style="cursor:pointer">
-      <div class="photo-thumb-inner"><span class="symf photo-placeholder">image</span></div>
-      <div class="photo-overlay"><span class="sym" style="color:#fff;font-size:18px">download</span><span style="color:#fff;font-size:11px;margin-left:4px">Queue DL</span></div>
-    </div>`;
+    return `<div class="media-card"><span class="symf media-icon">image</span><div class="media-body"><div class="media-name">Photo</div><div class="media-meta">image/jpeg${md.size?" · "+fmtSize(md.size):""}</div></div><div class="media-actions">${actions}</div></div>`;
   }
 
   // document / video / audio / voice
@@ -1549,21 +1544,59 @@ function qDesc(a){
 
 async function dispatch(){
   if(!S.queue.length) return;
+
+  // guard: token must exist
+  if(!CFG.ghToken){
+    snack("✗ No GitHub token — re-unlock the page");
+    track("DISPATCH","No token","error","CFG.ghToken is empty. Re-enter password.");
+    renderFab(); return;
+  }
+  if(!CFG.ghOwner||!CFG.ghRepo){
+    snack("✗ GitHub owner/repo missing in config.enc");
+    track("DISPATCH","Missing owner/repo","error","Re-run fetch workflow.");
+    renderFab(); return;
+  }
+
   const actions=S.queue.map(a=>{const c={...a};delete c._id;return c;});
-  const b64=btoa(unescape(encodeURIComponent(JSON.stringify(actions))));
-  track("DISPATCH",`Dispatching ${actions.length} action(s)`,"running","Calling GitHub Actions…");
-  renderFab();
+  // btoa can fail on unicode — use a safe encoder
+  let b64;
   try{
-    const r=await fetch(`https://api.github.com/repos/${CFG.ghOwner}/${CFG.ghRepo}/actions/workflows/process_queue.yml/dispatches`,
-      {method:"POST",headers:{Authorization:`Bearer ${CFG.ghToken}`,Accept:"application/vnd.github+json","Content-Type":"application/json"},
-       body:JSON.stringify({ref:"main",inputs:{queue_json:b64}})});
-    if(!r.ok) throw new Error(`GitHub ${r.status}: ${await r.text()}`);
-    track("DISPATCH",`${actions.length} action(s) sent`,"ok");
+    const json=JSON.stringify(actions);
+    b64=btoa(encodeURIComponent(json).replace(/%([0-9A-F]{2})/g,(_,p)=>String.fromCharCode(parseInt(p,16))));
+  }catch(e){
+    snack("✗ Failed to encode queue: "+e.message); return;
+  }
+
+  const url=`https://api.github.com/repos/${CFG.ghOwner}/${CFG.ghRepo}/actions/workflows/process_queue.yml/dispatches`;
+  track("DISPATCH",`Dispatching ${actions.length} action(s)`,"running",`POST ${url}`);
+  renderFab();
+
+  try{
+    const r=await fetch(url,{
+      method:"POST",
+      headers:{
+        "Authorization":`Bearer ${CFG.ghToken}`,
+        "Accept":"application/vnd.github+json",
+        "Content-Type":"application/json",
+        "X-GitHub-Api-Version":"2022-11-28",
+      },
+      body:JSON.stringify({ref:"main",inputs:{queue_json:b64}}),
+    });
+    if(!r.ok){
+      const body=await r.text().catch(()=>"(no body)");
+      throw new Error(`HTTP ${r.status}: ${body}`);
+    }
+    track("DISPATCH",`${actions.length} action(s) sent`,"ok","Workflow triggered successfully");
     snack(`✓ Dispatched ${actions.length} action(s)`);
     S.queue=[]; setFabTab("tracker");
   }catch(e){
-    track("DISPATCH","Dispatch failed","error",e.message);
-    snack("✗ "+e.message);
+    // network errors (CORS, offline, etc) show a helpful message
+    let msg=e.message;
+    if(msg.includes("Failed to fetch")||msg.includes("NetworkError")||msg.includes("Load failed")){
+      msg="Network error — check: (1) GitHub token is valid, (2) token has workflow scope, (3) owner/repo are correct in config.enc";
+    }
+    track("DISPATCH","Dispatch failed","error",msg);
+    snack("✗ "+e.message.slice(0,60));
   }
   renderFab();
 }
@@ -1651,17 +1684,35 @@ async function openLbFromIndex(key){
    GITHUB SYNC
 ════════════════════════════════════ */
 async function triggerFetch(){
+  if(!CFG.ghToken){snack("✗ No GitHub token — re-unlock the page");return;}
+  if(!CFG.ghOwner||!CFG.ghRepo){snack("✗ Missing owner/repo in config.enc");return;}
   track("SYNC","Manual sync triggered","running","Triggering fetch_messages…");
   const ico=id("sync-ico"); ico.style.animation="spin 1s linear infinite";
   try{
-    const r=await fetch(`https://api.github.com/repos/${CFG.ghOwner}/${CFG.ghRepo}/actions/workflows/fetch_messages.yml/dispatches`,
-      {method:"POST",headers:{Authorization:`Bearer ${CFG.ghToken}`,Accept:"application/vnd.github+json","Content-Type":"application/json"},
-       body:JSON.stringify({ref:"main"})});
-    if(!r.ok) throw new Error(`GitHub ${r.status}`);
+    const r=await fetch(`https://api.github.com/repos/${CFG.ghOwner}/${CFG.ghRepo}/actions/workflows/fetch_messages.yml/dispatches`,{
+      method:"POST",
+      headers:{
+        "Authorization":`Bearer ${CFG.ghToken}`,
+        "Accept":"application/vnd.github+json",
+        "Content-Type":"application/json",
+        "X-GitHub-Api-Version":"2022-11-28",
+      },
+      body:JSON.stringify({ref:"main"}),
+    });
+    if(!r.ok){
+      const body=await r.text().catch(()=>"(no body)");
+      throw new Error(`HTTP ${r.status}: ${body}`);
+    }
     track("SYNC","Sync triggered","ok","Data updates in ~1 min");
-    snack("✓ Sync triggered");
-    setTimeout(()=>loadData().then(()=>{renderChats();if(S.activeId)openChat(S.activeId);}),65000);
-  }catch(e){track("SYNC","Sync failed","error",e.message);snack("✗ "+e.message);}
+    snack("✓ Sync triggered — refreshing in 65s");
+    setTimeout(()=>loadData().then(()=>{renderChats();if(S.activeId)openChat(S.activeId);snack("✓ Data refreshed");}),65000);
+  }catch(e){
+    let msg=e.message;
+    if(msg.includes("Failed to fetch")||msg.includes("NetworkError")||msg.includes("Load failed"))
+      msg="Network error — token may be invalid, expired, or missing 'workflow' scope";
+    track("SYNC","Sync failed","error",msg);
+    snack("✗ "+msg.slice(0,70));
+  }
   ico.style.animation="";
   if(S.fabOpen&&S.fabTab==="tracker") renderFab();
 }
