@@ -756,19 +756,19 @@ a:hover { text-decoration:underline; }
       <div class="lock-logo-text">TG<span>Relay</span></div>
     </div>
     <div class="lock-form">
-      <label class="lock-label" for="pw">Password</label>
+      <label class="lock-label" for="set-owner">GitHub username</label>
+      <input class="lock-input" type="text" id="set-owner" placeholder="your-github-username" autocomplete="off"/>
+      <label class="lock-label" for="set-repo" style="margin-top:4px">Repository name</label>
+      <input class="lock-input" type="text" id="set-repo" placeholder="tg-relay" autocomplete="off"/>
+      <label class="lock-label" for="set-token" style="margin-top:4px">Personal access token</label>
       <div class="lock-input-wrap">
-        <input class="lock-input" type="password" id="pw" placeholder="Enter password…" autocomplete="current-password"/>
-        <span class="sym lock-eye" id="pw-eye" onclick="togglePw()">visibility_off</span>
+        <input class="lock-input" type="password" id="set-token" placeholder="ghp_…" autocomplete="off"/>
+        <span class="sym lock-eye" id="tok-eye" onclick="toggleTok()">visibility_off</span>
       </div>
       <div class="lock-msg err" id="lerr"></div>
-      <div class="lock-msg inf" id="linf"></div>
       <button class="lock-btn" id="lock-btn" onclick="tryUnlock()">Continue</button>
     </div>
-    <div class="lock-footer">Secured with Fernet encryption</div>
-    <div style="margin-top:8px">
-      <button onclick="testConfigEnc()" style="background:none;border:1px solid var(--border2);color:var(--text3);border-radius:var(--r);padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer">Test config.enc fetch</button>
-    </div>
+    <div class="lock-footer">Stored only in this browser tab's session storage</div>
   </div>
 </div>
 
@@ -788,6 +788,7 @@ a:hover { text-decoration:underline; }
     <button class="tb-btn" onclick="triggerFetch()" title="Sync now"><span class="sym tb-btn-icon" id="sync-ico">sync</span></button>
     <button class="tb-btn" id="fab-topbtn" onclick="toggleFab()" title="Queue &amp; Tracker" style="position:relative"><span class="sym" id="fab-ico">pending_actions</span><div id="fab-badge" style="position:absolute;top:4px;right:4px;min-width:14px;height:14px;padding:0 3px;background:var(--accent);color:#fff;border-radius:7px;font-size:9px;font-weight:700;display:none;align-items:center;justify-content:center"></div></button>
     <button class="tb-btn" onclick="openJoin()" title="Join chat"><span class="sym">group_add</span></button>
+    <button class="tb-btn" id="ghost-btn" onclick="toggleGhost()" title="Ghost mode: viewing won't auto mark-read"><span class="sym" id="ghost-ico">visibility</span></button>
     <button class="tb-btn" onclick="showFiles()" title="Downloaded files"><span class="sym">folder_open</span></button>
     <button class="tb-btn" onclick="toggleNav()" title="Toggle nav"><span class="sym">menu</span></button>
   </div>
@@ -923,50 +924,26 @@ a:hover { text-decoration:underline; }
 
 <script>
 /* ════════════════════════════════════
-   FERNET BROWSER DECRYPT
+   SETTINGS (stored in sessionStorage — repo is private, this is just convenience)
 ════════════════════════════════════ */
-async function deriveKey(pw) {
-  return new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pw)));
+function loadSettings(){
+  try{ return JSON.parse(sessionStorage.getItem("tgrelay_settings")||"{}"); }
+  catch(e){ return {}; }
 }
-async function fernetDecrypt(keyBytes, raw) {
-  // raw is Uint8Array of the .enc file bytes (UTF-8 encoded base64url token)
-  const b64 = new TextDecoder().decode(raw).trim();
-  let s = b64.replace(/-/g,"+").replace(/_/g,"/");
-  while(s.length%4) s+="=";
-  const buf = Uint8Array.from(atob(s), c=>c.charCodeAt(0));
-  if(buf[0] !== 0x80) throw new Error("Not a Fernet token");
-  const iv   = buf.slice(9,25);
-  const ct   = buf.slice(25, buf.length-32);
-  const hmac = buf.slice(buf.length-32);
-  const sign = buf.slice(0, buf.length-32);
-  const sk = await crypto.subtle.importKey("raw",keyBytes.slice(0,16),{name:"HMAC",hash:"SHA-256"},false,["verify"]);
-  if(!await crypto.subtle.verify("HMAC",sk,hmac,sign)) throw new Error("Bad HMAC — wrong password");
-  const ek = await crypto.subtle.importKey("raw",keyBytes.slice(16,32),{name:"AES-CBC"},false,["decrypt"]);
-  return await crypto.subtle.decrypt({name:"AES-CBC",iv},ek,ct);
-}
-async function fernetDecryptJSON(keyBytes, raw) {
-  const plain = await fernetDecrypt(keyBytes, raw);
-  return JSON.parse(new TextDecoder().decode(plain));
-}
-async function fernetDecryptBytes(keyBytes, raw) {
-  return new Uint8Array(await fernetDecrypt(keyBytes, raw));
-}
-async function sha256hex(s) {
-  const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
-  return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");
+function saveSettings(s){
+  sessionStorage.setItem("tgrelay_settings", JSON.stringify(s));
 }
 
 /* ════════════════════════════════════
    STATE
 ════════════════════════════════════ */
-const CFG = { dataBase:"./data", ghOwner:"", ghRepo:"", ghToken:"", pwHash:"" };
-let uiKey = null; // derived key bytes, kept for decrypting .enc files
+const CFG = { dataBase:"./data", ghOwner:"", ghRepo:"", ghToken:"" };
 
 const S = {
   chats:{}, meta:{}, filesIndex:{},
   activeId:null, tab:"all", filter:"all",
   queue:[], tracker:[], fabOpen:false, fabTab:"queue",
-  replyTo:null,
+  replyTo:null, ghostMode:false,
   // lightbox
   lbItems:[], lbIdx:0,
 };
@@ -974,94 +951,37 @@ const S = {
 /* ════════════════════════════════════
    LOCK
 ════════════════════════════════════ */
-function togglePw(){
-  const i=document.getElementById("pw"), e=document.getElementById("pw-eye");
+function toggleTok(){
+  const i=document.getElementById("set-token"), e=document.getElementById("tok-eye");
   i.type=i.type==="password"?"text":"password";
   e.textContent=i.type==="password"?"visibility_off":"visibility";
 }
-async function tryUnlock(){
-  const val=document.getElementById("pw").value.trim();
-  const err=id("lerr"), inf=id("linf"), btn=id("lock-btn");
-  err.textContent=""; inf.textContent="";
-  if(!val){err.textContent="Enter your password.";return;}
-  btn.disabled=true;
+function tryUnlock(){
+  const owner=id("set-owner").value.trim();
+  const repo =id("set-repo").value.trim();
+  const token=id("set-token").value.trim();
+  const err=id("lerr");
+  err.textContent="";
 
-  // STEP 1: fetch config.enc
-  inf.textContent="Step 1/4: Fetching config.enc…";
-  let enc;
-  try{
-    const url=`${CFG.dataBase}/config.enc?_=${Date.now()}`;
-    const r=await fetch(url);
-    inf.textContent=`Step 1/4: HTTP ${r.status} from ${url}`;
-    if(!r.ok) throw new Error(`HTTP ${r.status} — file missing, run fetch workflow first`);
-    enc=new Uint8Array(await r.arrayBuffer());
-    inf.textContent=`Step 1/4: Got ${enc.length} bytes ✓`;
-    await new Promise(r=>setTimeout(r,400));
-  }catch(e){
-    err.textContent=e.message;
-    inf.textContent=""; btn.disabled=false; return;
+  if(!owner||!repo||!token){
+    err.textContent="Fill in GitHub owner, repo, and token.";
+    return;
   }
 
-  // STEP 2: derive key
-  inf.textContent="Step 2/4: Deriving key from password…";
-  let key, cfg;
-  try{
-    key=await deriveKey(val);
-    inf.textContent=`Step 2/4: Key derived (${key.length} bytes) ✓`;
-    await new Promise(r=>setTimeout(r,300));
-  }catch(e){
-    err.textContent="Key derivation failed: "+e.message;
-    inf.textContent=""; btn.disabled=false; return;
-  }
+  CFG.ghOwner=owner; CFG.ghRepo=repo; CFG.ghToken=token;
+  saveSettings({ghOwner:owner,ghRepo:repo,ghToken:token});
 
-  // STEP 3: decrypt
-  inf.textContent="Step 3/4: Decrypting…";
-  try{
-    cfg=await fernetDecryptJSON(key,enc);
-    uiKey=key;
-    inf.textContent="Step 3/4: Decrypted ✓";
-    await new Promise(r=>setTimeout(r,300));
-  }catch(e){
-    if(e.message&&e.message.includes("HMAC")){
-      err.textContent="Wrong password (HMAC mismatch). Make sure UI_ENCRYPTION_KEY secret matches your login password exactly.";
-    } else if(e.message&&(e.message.includes("JSON")||e.message.includes("parse"))){
-      err.textContent="Decrypted but JSON is invalid — config.enc may be corrupted. Re-run fetch workflow.";
-    } else {
-      err.textContent="Decrypt error: "+e.message;
-    }
-    inf.textContent=""; btn.disabled=false; return;
-  }
-
-  // STEP 4: verify password hash
-  inf.textContent="Step 4/4: Verifying password…";
-  try{
-    if(!cfg||typeof cfg!=="object"||!cfg.password_hash){
-      throw new Error("config.enc missing password_hash field — re-run fetch workflow");
-    }
-    const hash=await sha256hex(val);
-    if(hash!==cfg.password_hash){
-      err.textContent=`Wrong password. Hash mismatch:\nGot:      ${hash.slice(0,16)}…\nExpected: ${cfg.password_hash.slice(0,16)}…`;
-      inf.textContent=""; btn.disabled=false; return;
-    }
-    inf.textContent="Step 4/4: Verified ✓";
-    await new Promise(r=>setTimeout(r,300));
-  }catch(e){
-    err.textContent=e.message;
-    inf.textContent=""; btn.disabled=false; return;
-  }
-
-  // SUCCESS
-  CFG.ghToken=cfg.gh_token||"";
-  CFG.ghOwner=cfg.gh_owner||"";
-  CFG.ghRepo =cfg.gh_repo ||"";
-  inf.textContent="Launching…";
-  await new Promise(r=>setTimeout(r,200));
   id("lock").style.display="none";
   id("app").classList.add("on");
   initApp();
 }
-id("pw").addEventListener("keydown",e=>{if(e.key==="Enter")tryUnlock();});
-
+// pre-fill from saved settings if present
+(function(){
+  const s=loadSettings();
+  if(s.ghOwner) document.getElementById("set-owner").value=s.ghOwner;
+  if(s.ghRepo)  document.getElementById("set-repo").value=s.ghRepo;
+  if(s.ghToken) document.getElementById("set-token").value=s.ghToken;
+})();
 /* ════════════════════════════════════
    INIT
 ════════════════════════════════════ */
@@ -1163,6 +1083,12 @@ function openChat(cid){
   id("empty-th").style.display="none";
   id("th-top").style.display="flex";
   id("compose").style.display="block";
+  // auto mark-read on open (unless ghost mode is on)
+  if(!S.ghostMode && c.unread_count>0){
+    addQSilent({type:"mark_read",chat_id:cid});
+    c.unread_count=0;
+    renderChats();
+  }
   const isBot=c.is_bot||c.kind==="bot";
   const av=id("th-av");
   av.className=`th-av ${isBot?"bot":c.kind==="group"?"group":c.kind==="channel"?"channel":""}`;
@@ -1291,15 +1217,16 @@ function mediaPartHTML(m, chatId, lbKey){
   return `<div class="media-card"><span class="symf media-icon">${icon}</span><div class="media-body"><div class="media-name">${esc(rawName)}</div><div class="media-meta">${esc(meta)}</div></div><div class="media-actions">${actions}</div></div>`;
 }
 
-function findEncFile(chatId, msgId){
-  // look up files_index for a matching entry
+function findLocalFile(chatId, msgId, kind){
   const key=Object.keys(S.filesIndex).find(k=>{
     const f=S.filesIndex[k];
+    if(kind) return f.chat_id==chatId && f.label===kind;
     return f.chat_id==chatId && f.msg_id==msgId;
   });
   if(!key) return null;
-  return S.filesIndex[key].enc_path; // path like data/files/xxx.enc
+  return S.filesIndex[key].path; // e.g. data/files/12345_678.jpg
 }
+const findEncFile = findLocalFile; // backwards-compat alias
 
 function ikbHTML(m,chatId){
   if(!m.inline_keyboard?.length) return "";
@@ -1396,13 +1323,12 @@ function toggleDl(el,chatId,msgId,forceAdd){
 /* ════════════════════════════════════
    DECRYPT HELPERS
 ════════════════════════════════════ */
-async function decryptToObjectURL(encPath, mimeType){
-  // encPath is like "data/files/xxx.enc" — fetch it relative to repo root
-  const fetchPath = encPath.startsWith("data/") ? "./"+encPath : encPath;
+async function decryptToObjectURL(filePath, mimeType){
+  // files are stored as plain bytes now (private repo) — just fetch directly
+  const fetchPath = filePath.startsWith("data/") ? "./"+filePath : filePath;
   const r=await fetch(`${fetchPath}?_=${Date.now()}`);
   if(!r.ok) throw new Error(`HTTP ${r.status} fetching ${fetchPath}`);
-  const raw=new Uint8Array(await r.arrayBuffer());
-  const bytes=await fernetDecryptBytes(uiKey,raw);
+  const bytes=await r.arrayBuffer();
   const blob=new Blob([bytes],{type:mimeType||"application/octet-stream"});
   return URL.createObjectURL(blob);
 }
@@ -1522,6 +1448,12 @@ function addQ(action){
   renderFab();
   if(!S.fabOpen){S.fabOpen=true;id("fab-panel").classList.add("on");}
   setFabTab("queue");
+}
+function addQSilent(action){
+  // same as addQ but doesn't pop open the panel or show a snack — for auto mark-read
+  action._id=Date.now()+Math.random();
+  S.queue.push(action);
+  renderFab();
 }
 function rmQ(i){S.queue=S.queue.filter(a=>a._id!==i);renderFab();}
 function track(type,label,status,detail=""){
@@ -1651,7 +1583,7 @@ function showFiles(){
         </div>
         <div class="fi-actions">
           ${canPreview?`<button class="fi-btn" onclick="closeFiles();openLbFromIndex('${f.safe_name||f.label}')"><span class="sym">visibility</span>View</button>`:""}
-          <button class="fi-btn" onclick="downloadEnc('${f.enc_path}','${esc(f.filename||f.safe_name||"file")}')"><span class="sym">download</span>Save</button>
+          <button class="fi-btn" onclick="downloadEnc('${f.path}','${esc(f.filename||f.safe_name||"file")}')"><span class="sym">download</span>Save</button>
         </div>
       </div>`;
     }).join("");
@@ -1670,13 +1602,13 @@ async function openLbFromIndex(key){
   cont.innerHTML=`<div class="lb-loading"><div class="lb-spinner"></div><span>Decrypting…</span></div>`;
   foot.innerHTML="";
   try{
-    const url=await decryptToObjectURL(f.enc_path,mime);
+    const url=await decryptToObjectURL(f.path,mime);
     S._lbUrl=url;
     if(mime.startsWith("video")) cont.innerHTML=`<video controls autoplay style="max-width:90vw;max-height:82vh;border-radius:var(--r2)" src="${url}"></video>`;
     else if(mime.startsWith("image")) cont.innerHTML=`<img src="${url}" style="max-width:90vw;max-height:82vh;border-radius:var(--r2);object-fit:contain"/>`;
-    else if(mime.startsWith("audio")) { await playAudioEnc(f.enc_path,f.filename||"audio",mime); closeLb(); return; }
+    else if(mime.startsWith("audio")) { await playAudioEnc(f.path,f.filename||"audio",mime); closeLb(); return; }
     else cont.innerHTML=`<div style="color:var(--text2);font-size:13px;text-align:center"><span class="symf" style="font-size:48px;display:block;margin-bottom:12px;color:var(--accent)">description</span>${esc(f.filename)}</div>`;
-    foot.innerHTML=`<div class="lb-info">${esc(f.filename||"File")} ${f.size?`· ${fmtSize(f.size)}`:""}</div><button class="lb-dl-btn" onclick="downloadEnc('${f.enc_path}','${esc(f.filename||"file")}')"><span class="sym">download</span>Save</button>`;
+    foot.innerHTML=`<div class="lb-info">${esc(f.filename||"File")} ${f.size?`· ${fmtSize(f.size)}`:""}</div><button class="lb-dl-btn" onclick="downloadEnc('${f.path}','${esc(f.filename||"file")}')"><span class="sym">download</span>Save</button>`;
   }catch(e){cont.innerHTML=`<div style="color:var(--red);font-size:13px">Decrypt failed: ${esc(e.message)}</div>`;}
 }
 
@@ -1721,6 +1653,14 @@ async function triggerFetch(){
    UI UTILS
 ════════════════════════════════════ */
 function toggleNav(){id("nav").classList.toggle("open");}
+function toggleGhost(){
+  S.ghostMode=!S.ghostMode;
+  const btn=id("ghost-btn"), ico=id("ghost-ico");
+  ico.textContent=S.ghostMode?"visibility_off":"visibility";
+  btn.style.color=S.ghostMode?"var(--accent)":"";
+  btn.title=S.ghostMode?"Ghost mode ON — viewing won't mark chats as read":"Ghost mode OFF — viewing marks chats as read";
+  snack(S.ghostMode?"👻 Ghost mode ON":"Ghost mode OFF — auto mark-read enabled");
+}
 function scrollToMsg(mid){document.querySelector(`[data-mid="${mid}"]`)?.scrollIntoView({behavior:"smooth",block:"center"});}
 function autoGrow(el){el.style.height="auto";el.style.height=Math.min(el.scrollHeight,120)+"px";}
 function composeKey(e){if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();queueMsg();}}
@@ -1766,22 +1706,7 @@ function mimeIcon(mime){if(!mime)return"description";if(mime.startsWith("image")
 
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeLb();closeFiles();closeCtx();closeJoin();}});
 
-async function testConfigEnc(){
-  const inf=id("linf"), err=id("lerr");
-  err.textContent=""; inf.textContent="Testing…";
-  try{
-    const r=await fetch("./data/config.enc?_="+Date.now());
-    const bytes=new Uint8Array(await r.arrayBuffer());
-    const b64preview=btoa(String.fromCharCode(...bytes.slice(0,16)));
-    inf.textContent=`HTTP ${r.status} · ${bytes.length} bytes · starts: ${b64preview}…`;
-    if(bytes[0]!==0x80) err.textContent="Warning: first byte is 0x"+bytes[0].toString(16)+", expected 0x80 (not a valid Fernet token)";
-    else err.textContent="";
-  }catch(e){
-    inf.textContent="";
-    err.textContent="Fetch failed: "+e.message;
-  }
-}
-document.addEventListener("click",e=>{if(!e.target.closest("#ctx-menu")&&!e.target.closest(".msg-menu-btn"))closeCtx();});
+// (debug helper removed — no longer needed without encrypted config));
 
 /* CONTEXT MENU */
 let _ctx={chatId:null,msgId:null,text:""};

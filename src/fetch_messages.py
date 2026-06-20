@@ -1,52 +1,37 @@
 """
-fetch_messages.py — with bio, bot flag, inline keyboards, dual-key encryption
+fetch_messages.py — with archived/pinned/saved chats, ghost mode, configurable
+per-chat fetch counts, system message handling, privacy-safe filenames.
 """
 
 import os
 import json
 import asyncio
-import base64
-import hashlib
 from pathlib import Path
 from datetime import datetime, timezone
 
 from pyrogram import Client
 from pyrogram.enums import ChatType, MessageMediaType
 from pyrogram.errors import FloodWait
-from cryptography.fernet import Fernet
 
 API_ID         = int(os.environ["TG_API_ID"])
 API_HASH       = os.environ["TG_API_HASH"]
 SESSION_STRING = os.environ["TG_SESSION_STRING"].strip()
-RAW_KEY        = os.environ["DATA_KEY"]
-UI_KEY         = os.environ["UI_ENCRYPTION_KEY"]
 FORCE          = os.environ.get("FORCE_FULL", "false").lower() == "true"
 INIT_N         = int(os.environ.get("DEFAULT_FETCH_COUNT",  "20"))
 UPD_N          = int(os.environ.get("DEFAULT_UPDATE_COUNT", "50"))
+GHOST_MODE     = os.environ.get("GHOST_MODE", "false").lower() == "true"
 
-GH_DISPATCH_TOKEN    = os.environ["GH_DISPATCH_TOKEN"]
-MASTER_PASSWORD_HASH = os.environ["MASTER_PASSWORD_HASH"]
-GH_OWNER             = os.environ["GH_OWNER"]
-GH_REPO              = os.environ["GH_REPO"]
 
-DATA_DIR   = Path("data")
+DATA_DIR    = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
-META_FILE  = DATA_DIR / "meta.json"
-CHATS_ENC  = DATA_DIR / "chats.enc"
-CHATS_JSON = DATA_DIR / "chats.json"
-CONFIG_ENC = DATA_DIR / "config.enc"
+META_FILE   = DATA_DIR / "meta.json"
+CHATS_FILE  = DATA_DIR / "chats.json"
+SETTINGS_FILE = DATA_DIR / "chat_settings.json"  # per-chat fetch_n overrides
 
-def _fernet(p: str) -> Fernet:
-    return Fernet(base64.urlsafe_b64encode(hashlib.sha256(p.encode()).digest()))
-
-F    = _fernet(RAW_KEY)
-F_ui = _fernet(UI_KEY)
-
-def encrypt(obj, f: Fernet = None) -> bytes:
-    return (f or F).encrypt(json.dumps(obj, ensure_ascii=False, default=str).encode())
-
-def decrypt(data: bytes, f: Fernet = None):
-    return json.loads((f or F).decrypt(data))
+def load_chat_settings() -> dict:
+    if SETTINGS_FILE.exists():
+        return json.loads(SETTINGS_FILE.read_text())
+    return {}
 
 def _chat_kind(chat_type: ChatType) -> str:
     return {
@@ -110,7 +95,6 @@ def _reactions(msg) -> list:
     return [{"emoji": r.emoji, "count": r.count} for r in msg.reactions.reactions]
 
 def _inline_keyboard(msg) -> list | None:
-    """Extract inline keyboard buttons from a bot message."""
     if not msg.reply_markup:
         return None
     try:
@@ -128,6 +112,39 @@ def _inline_keyboard(msg) -> list | None:
     except Exception:
         return None
 
+# system / service message labels (pin, title change, member join, etc.)
+def _service_text(msg) -> str | None:
+    """Return a human-readable label for service messages, or None if not a service msg."""
+    if not msg.service:
+        return None
+    svc = msg.service
+    svc_name = svc.name if hasattr(svc, "name") else str(svc)
+    try:
+        if msg.pinned_message:
+            preview = (msg.pinned_message.text or "media")[:40]
+            return f"📌 Pinned: \"{preview}\""
+        if msg.new_chat_title:
+            return f"✏️ Changed group name to \"{msg.new_chat_title}\""
+        if msg.new_chat_photo:
+            return "🖼️ Changed group photo"
+        if msg.delete_chat_photo:
+            return "🗑️ Removed group photo"
+        if msg.new_chat_members:
+            names = ", ".join(f"{u.first_name or u.id}" for u in msg.new_chat_members)
+            return f"➕ {names} joined the group"
+        if msg.left_chat_member:
+            u = msg.left_chat_member
+            return f"➖ {u.first_name or u.id} left the group"
+        if msg.group_chat_created:
+            return "👥 Group created"
+        if msg.channel_chat_created:
+            return "📢 Channel created"
+        if msg.migrate_to_chat_id:
+            return "🔁 Group upgraded to supergroup"
+    except Exception:
+        pass
+    return f"⚙️ {svc_name}"
+
 def _serialize_message(msg, chat_id: int) -> dict:
     from_id = None
     if msg.from_user:
@@ -135,27 +152,37 @@ def _serialize_message(msg, chat_id: int) -> dict:
     elif msg.sender_chat:
         from_id = msg.sender_chat.id
 
-    # serialize quoted/reply message preview
+    service_text = _service_text(msg)
+
     reply_preview = None
     if getattr(msg, "reply_to_message", None):
         rm = msg.reply_to_message
         reply_preview = {
             "id":      rm.id,
-            "text":    rm.text or rm.caption or "",
+            "text":    rm.text or rm.caption or _service_text(rm) or "",
             "from_id": rm.from_user.id if rm.from_user else None,
             "media":   _media_info(rm),
         }
+
+    # Telegram "quote" feature (select text + reply with that exact excerpt)
+    quote_text = None
+    if getattr(msg, "quote", None):
+        quote_text = getattr(msg.quote, "text", None)
+    elif hasattr(msg, "reply_to_message") and getattr(msg, "quote_text", None):
+        quote_text = msg.quote_text
 
     return {
         "id":              msg.id,
         "chat_id":         chat_id,
         "date":            msg.date.isoformat() if msg.date else None,
         "from_id":         from_id,
-        "text":            msg.text or msg.caption or "",
+        "text":            msg.text or msg.caption or service_text or "",
+        "is_service":      bool(service_text),
         "media":           _media_info(msg),
         "reactions":       _reactions(msg),
         "reply_to":        msg.reply_to_message_id,
         "reply_preview":   reply_preview,
+        "quote_text":      quote_text,
         "pinned":          getattr(msg, "pinned", False),
         "out":             getattr(msg, "outgoing", False),
         "views":           getattr(msg, "views", None),
@@ -165,18 +192,17 @@ def _serialize_message(msg, chat_id: int) -> dict:
     }
 
 async def _fetch_chat_info(app: Client, chat_id: int) -> dict:
-    """Fetch extended info: bio, last_seen, is_bot, etc."""
     try:
         full = await app.get_chat(chat_id)
-        info = {
-            "bio":         getattr(full, "bio", None) or getattr(full, "description", None),
+        return {
+            "bio":           getattr(full, "bio", None) or getattr(full, "description", None),
             "members_count": getattr(full, "members_count", None),
-            "is_verified": getattr(full, "is_verified", False),
-            "is_scam":     getattr(full, "is_scam", False),
-            "is_fake":     getattr(full, "is_fake", False),
-            "dc_id":       getattr(full, "dc_id", None),
+            "is_verified":   getattr(full, "is_verified", False),
+            "is_scam":       getattr(full, "is_scam", False),
+            "is_fake":       getattr(full, "is_fake", False),
+            "dc_id":         getattr(full, "dc_id", None),
+            "has_photo":     bool(getattr(full, "photo", None)),
         }
-        return info
     except Exception:
         return {}
 
@@ -187,7 +213,8 @@ async def main():
 
     first_run = FORCE or not meta.get("initialized", False)
     fetch_n   = INIT_N if first_run else UPD_N
-    print(f"first_run={first_run}, fetch_n={fetch_n}")
+    chat_settings = load_chat_settings()  # {chat_id: {"fetch_n": N}}
+    print(f"first_run={first_run}, fetch_n={fetch_n}, ghost_mode={GHOST_MODE}")
 
     app = Client(
         name="relay",
@@ -195,6 +222,7 @@ async def main():
         api_hash=API_HASH,
         session_string=SESSION_STRING,
         in_memory=True,
+        no_updates=GHOST_MODE,  # in ghost mode, avoid marking things as seen via update stream
     )
 
     async with app:
@@ -204,84 +232,116 @@ async def main():
         print(f"✓ Connected as {my_name}")
 
         chats_data: dict[str, dict] = {}
-        if CHATS_ENC.exists() and not first_run:
-            chats_data = decrypt(CHATS_ENC.read_bytes())
+        if CHATS_FILE.exists() and not first_run:
+            chats_data = json.loads(CHATS_FILE.read_text())
 
         action_log = []
 
-        async for dialog in app.get_dialogs():
-            chat    = dialog.chat
-            chat_id = chat.id
-            key     = str(chat_id)
-            unread  = dialog.unread_messages_count or 0
-
-            if not first_run and unread == 0:
-                continue
-
-            name = (
-                getattr(chat, "title", None)
-                or f"{getattr(chat,'first_name','') or ''} {getattr(chat,'last_name','') or ''}".strip()
-                or str(chat_id)
-            )
-            kind = _chat_kind(chat.type)
-            is_bot = chat.type == ChatType.BOT
-
-            messages = []
-            try:
-                async for msg in app.get_chat_history(chat_id, limit=fetch_n):
-                    messages.append(_serialize_message(msg, chat_id))
-            except FloodWait as e:
-                print(f"  FloodWait {e.value}s on {name}, skipping")
-                await asyncio.sleep(e.value)
-                continue
-            except Exception as e:
-                print(f"  Error fetching {name}: {e}")
-                continue
-
-            # fetch extended info on first run or if missing
-            extra = {}
-            if first_run or key not in chats_data or "bio" not in chats_data.get(key, {}):
-                extra = await _fetch_chat_info(app, chat_id)
-                await asyncio.sleep(0.2)
-
-            existing = {m["id"]: m for m in chats_data.get(key, {}).get("messages", [])}
-            for m in messages:
+        # ── Saved Messages (chat with yourself) ──
+        try:
+            saved_id = me.id
+            saved_key = str(saved_id)
+            n = chat_settings.get(saved_key, {}).get("fetch_n", fetch_n)
+            saved_msgs = []
+            async for msg in app.get_chat_history(saved_id, limit=n):
+                saved_msgs.append(_serialize_message(msg, saved_id))
+            existing = {m["id"]: m for m in chats_data.get(saved_key, {}).get("messages", [])}
+            for m in saved_msgs:
                 existing[m["id"]] = m
-
-            chats_data[key] = {
-                "id":                chat_id,
-                "name":              name,
-                "kind":              kind,
-                "is_bot":            is_bot,
-                "username":          getattr(chat, "username", None),
-                "unread_count":      unread,
-                "last_message_date": messages[0]["date"] if messages else None,
-                "messages":          list(existing.values()),
-                # extended info
-                "bio":               extra.get("bio") or chats_data.get(key, {}).get("bio"),
-                "members_count":     extra.get("members_count") or chats_data.get(key, {}).get("members_count"),
-                "is_verified":       extra.get("is_verified", False),
-                "is_scam":           extra.get("is_scam", False),
+            chats_data[saved_key] = {
+                "id": saved_id, "name": "Saved Messages", "kind": "saved",
+                "is_bot": False, "username": None, "unread_count": 0,
+                "last_message_date": saved_msgs[0]["date"] if saved_msgs else None,
+                "messages": list(existing.values()),
+                "is_pinned": True, "is_archived": False,
+                "bio": None, "members_count": None, "is_verified": False, "is_scam": False,
             }
-            action_log.append({"chat": name, "fetched": len(messages)})
-            print(f"  ↳ {name}: {len(messages)} messages")
+            print(f"  ↳ Saved Messages: {len(saved_msgs)} messages")
+        except Exception as e:
+            print(f"  Could not fetch Saved Messages: {e}")
 
-        CHATS_ENC.write_bytes(encrypt(chats_data, F))
-        CHATS_JSON.write_text(json.dumps(chats_data, ensure_ascii=False, default=str, indent=2))
+        # ── Regular + archived dialogs ──
+        # Pyrogram's get_dialogs(folder_id=1) returns archived; folder_id=0/default = main list
+        async def process_dialogs(folder_id, is_archived):
+            async for dialog in app.get_dialogs(folder_id=folder_id):
+                chat    = dialog.chat
+                chat_id = chat.id
+                key     = str(chat_id)
+                unread  = 0 if GHOST_MODE else (dialog.unread_messages_count or 0)
+                is_pinned = getattr(dialog, "is_pinned", False)
 
-        config_payload = {
-            "gh_token":      GH_DISPATCH_TOKEN,
-            "password_hash": MASTER_PASSWORD_HASH,
-            "gh_owner":      GH_OWNER,
-            "gh_repo":       GH_REPO,
-        }
-        CONFIG_ENC.write_bytes(encrypt(config_payload, F_ui))
-        print("✓ config.enc written")
+                if not first_run and not GHOST_MODE and (dialog.unread_messages_count or 0) == 0:
+                    # still update pinned/archived flags even with 0 unread, but skip refetch
+                    if key in chats_data:
+                        chats_data[key]["is_pinned"] = is_pinned
+                        chats_data[key]["is_archived"] = is_archived
+                    continue
+
+                name = (
+                    getattr(chat, "title", None)
+                    or f"{getattr(chat,'first_name','') or ''} {getattr(chat,'last_name','') or ''}".strip()
+                    or str(chat_id)
+                )
+                kind = _chat_kind(chat.type)
+                is_bot = chat.type == ChatType.BOT
+
+                n = chat_settings.get(key, {}).get("fetch_n", fetch_n)
+
+                messages = []
+                try:
+                    async for msg in app.get_chat_history(chat_id, limit=n):
+                        messages.append(_serialize_message(msg, chat_id))
+                except FloodWait as e:
+                    print(f"  FloodWait {e.value}s on {name}, skipping")
+                    await asyncio.sleep(e.value)
+                    continue
+                except Exception as e:
+                    print(f"  Error fetching {name}: {e}")
+                    continue
+
+                extra = {}
+                if first_run or key not in chats_data or "bio" not in chats_data.get(key, {}):
+                    extra = await _fetch_chat_info(app, chat_id)
+                    await asyncio.sleep(0.2)
+
+                existing = {m["id"]: m for m in chats_data.get(key, {}).get("messages", [])}
+                for m in messages:
+                    existing[m["id"]] = m
+
+                chats_data[key] = {
+                    "id":                chat_id,
+                    "name":              name,
+                    "kind":              kind,
+                    "is_bot":            is_bot,
+                    "username":          getattr(chat, "username", None),
+                    "unread_count":      unread,
+                    "last_message_date": messages[0]["date"] if messages else None,
+                    "messages":          list(existing.values()),
+                    "is_pinned":         is_pinned,
+                    "is_archived":       is_archived,
+                    "bio":               extra.get("bio") or chats_data.get(key, {}).get("bio"),
+                    "members_count":     extra.get("members_count") or chats_data.get(key, {}).get("members_count"),
+                    "is_verified":       extra.get("is_verified", False),
+                    "is_scam":           extra.get("is_scam", False),
+                    "has_photo":         extra.get("has_photo", chats_data.get(key, {}).get("has_photo", False)),
+                }
+                action_log.append({"chat": name, "fetched": len(messages)})
+                print(f"  ↳ {name}{' [archived]' if is_archived else ''}{' [pinned]' if is_pinned else ''}: {len(messages)} messages")
+
+        await process_dialogs(folder_id=0, is_archived=False)
+        try:
+            await process_dialogs(folder_id=1, is_archived=True)
+        except Exception as e:
+            print(f"  Could not fetch archived dialogs: {e}")
+
+        CHATS_FILE.write_text(json.dumps(chats_data, ensure_ascii=False, default=str, indent=2))
+        print("✓ chats.json written")
 
         meta["initialized"] = True
         meta["last_sync"]   = datetime.now(timezone.utc).isoformat()
         meta["sync_log"]    = action_log
         meta["total_chats"] = len(chats_data)
+        meta["ghost_mode"]  = GHOST_MODE
         META_FILE.write_text(json.dumps(meta, indent=2, default=str))
         print(f"✓ Done — {len(chats_data)} chats written")
 
