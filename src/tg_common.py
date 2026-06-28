@@ -375,6 +375,15 @@ async def sync_chat(app: Client, chat_id, *, chats_data: dict, files_index: dict
     existing_msgs = {m["id"]: m for m in existing_entry.get("messages", [])}
     for m in serialized:
         existing_msgs[m["id"]] = m
+    # IMPORTANT: dict insertion order puts brand-new message IDs at the end,
+    # but every consumer (chat list preview, message renderer) assumes
+    # messages[0] is the newest message. Re-sort by id (monotonically
+    # increasing per chat) so that invariant always holds after a merge.
+    merged_messages = sorted(existing_msgs.values(), key=lambda m: m["id"], reverse=True)
+    # cap cached history per chat so the repo doesn't grow forever — keep
+    # comfortably more than the current fetch count so nothing useful is lost
+    cap = max(fetch_n * 5, 300)
+    merged_messages = merged_messages[:cap]
 
     needs_info = "bio" not in existing_entry or not existing_entry.get("_avatar_checked")
     extra = await fetch_chat_info(app, chat.id) if needs_info else {}
@@ -393,7 +402,7 @@ async def sync_chat(app: Client, chat_id, *, chats_data: dict, files_index: dict
         "archived":          archived if archived is not None else existing_entry.get("archived", False),
         "pinned":            pinned if pinned is not None else existing_entry.get("pinned", False),
         "last_message_date": serialized[0]["date"] if serialized else existing_entry.get("last_message_date"),
-        "messages":          list(existing_msgs.values()),
+        "messages":          merged_messages,
         "fetch_count":       fetch_n,
         "bio":               extra.get("bio") or existing_entry.get("bio"),
         "members_count":     extra.get("members_count") or existing_entry.get("members_count"),
