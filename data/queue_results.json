@@ -1,20 +1,18 @@
 {
-  "processed_at": "2026-06-28T18:38:56.895124+00:00",
+  "processed_at": "2026-07-13T21:41:33.987445+00:00",
   "total": 1,
   "ok": 1,
   "errors": 0,
   "synced_chats": [
-    "M\u00e6hd!"
+    "Break The Barriers"
   ],
   "results": [
     {
       "index": 0,
-      "type": "send_message",
+      "type": "mark_read",
       "status": "ok",
       "result": {
-        "ok": true,
-        "msg_id": 56541,
-        "chat_id": 177590614
+        "ok": true
       }
     }
   ]
